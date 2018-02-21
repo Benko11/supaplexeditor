@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#administration {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}

@@ -50,18 +50,7 @@ $elements = array(
     <title>Supaplex Editor</title>
     <meta charset="utf-8">
 
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        #administration {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
 <?php
