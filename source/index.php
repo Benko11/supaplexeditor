@@ -85,6 +85,6 @@ echo '</tr></table>';
         <option value="infotron">Infotron</option>
     </select>
 </nav>
-<script src="editor.js"></script>
+<script src="js/editor.js"></script>
 </body>
 </html>
