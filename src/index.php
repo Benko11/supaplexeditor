@@ -1,6 +1,8 @@
 <?php
 
-$baseName = basename(__DIR__);
+$currentUrl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+define('BASE_PATH', $currentUrl);
+
 $levels = bin2hex(file_get_contents('LEVELS.DAT'));
 $structure = str_split($levels, 2);
 
@@ -51,7 +53,7 @@ $elements = array(
     <title>Supaplex Editor</title>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/stylesheet.css">
 </head>
 <body>
 <?php
@@ -64,7 +66,8 @@ foreach ($structure as $key=>$element) {
 
     $fileName = strtolower($field);
     $fileName = str_replace(' ', '', $fileName);
-    echo '<td style="background: url(icons/'.$fileName.'.png);width:32px;height:32px;display:inline-block" data-position="el-'.$i.'">'.'</td>';
+
+    echo '<td style="background: url('. BASE_PATH .'/icons/'.$fileName.'.png);width:32px;height:32px;display:inline-block" data-position="el-'.$i.'">'.'</td>';
 
     $i++;
     echo ( ($i) % 60 == 0) ? '</tr><tr>' : '';
@@ -84,6 +87,6 @@ echo '</tr></table>';
         <option value="infotron">Infotron</option>
     </select>
 </nav>
-<script src="js/editor.js"></script>
+<script src="<?php echo BASE_PATH ?>/js/editor.js"></script>
 </body>
 </html>
