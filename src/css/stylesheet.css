@@ -8,3 +8,9 @@
     top: 10px;
     left: 10px;
 }
+
+#field {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+}

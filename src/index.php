@@ -1,5 +1,6 @@
 <?php
 
+$baseName = basename(__DIR__);
 $levels = bin2hex(file_get_contents('LEVELS.DAT'));
 $structure = str_split($levels, 2);
 
@@ -54,9 +55,7 @@ $elements = array(
 </head>
 <body>
 <?php
-echo '<table style="display: block;
-        overflow: auto;
-        white-space: nowrap;" cellpadding="0" cellspacing="0" id="field"><tr>';
+echo '<table cellpadding="0" cellspacing="0" id="field"><tr>';
 $i = 0;
 foreach ($structure as $key=>$element) {
     if (empty($element) || trim($element) == '') continue;
