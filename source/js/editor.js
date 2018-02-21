@@ -1,6 +1,6 @@
 let editObj = {
     changeElement: function(field) {
-        field.style.background = `url(icons/${activeElement}.png)`;
+        field.style.background = `url(source/icons/${activeElement}.png)`;
     },
 
     movementDetection: function() {
@@ -8,7 +8,7 @@ let editObj = {
     },
 
     changeActive: function() {
-        changeTo = this.value;
+        activeElement = this.value;
     }
 };
 
