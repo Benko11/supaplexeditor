@@ -22,10 +22,10 @@ make sense to you, I advise that you do a bit of digging before asking):
 The app is contained within `src` directory. Currently, it's overly simplistic, but that
 will change over time. There is:
 
-- *LEVELS.DAT* - file with all the levels
-- *PLAYER.LST* - file with user data
-- *elements.php* - has an array of all the elements stored
-- *field.php* - generates the level
-- *index.php* - manages the editor
+- **LEVELS.DAT** - file with all the levels
+- **PLAYER.LST** - file with user data
+- **elements.php** - has an array of all the elements stored
+- **field.php** - generates the level
+- **index.php** - manages the editor
 
 The rest is (I hope) pretty self-explanatory.
