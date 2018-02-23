@@ -1,10 +1,17 @@
 <?php
 
-$currentUrl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+$currentUrl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/src";
 define('BASE_PATH', $currentUrl);
 
 $levels = bin2hex(file_get_contents('LEVELS.DAT'));
+
+// gets all the levels and split them into binary sectors
 $structure = str_split($levels, 2);
+
+// retrieves only the level that is needed
+if (isset($_GET['id']) && (int)$_GET['id'] >= 1 && (int)$_GET['id'] <= 111) $id = $_GET['id'];
+else $id = 1;
+$structure = array_slice($structure, ($id - 1) * 1440 + 96 * ($id - 1), $id * 1440 + 96 * $id);
 
 $elements = require "elements.php";
 
@@ -20,24 +27,7 @@ $elements = require "elements.php";
 <body>
 <table cellpadding="0" cellspacing="0" id="field">
     <tr>
-<?php
-$i = 0;
-foreach ($structure as $key=>$element) {
-    if (empty($element) || trim($element) == '') continue;
-    if ($key >= 1529) break;
-    $field = $elements[$element];
-
-    $fileName = strtolower($field);
-    $fileName = str_replace(' ', '', $fileName);
-
-    echo '<td style="background: url('. BASE_PATH .'/icons/'.$fileName.'.png);width:32px;height:32px;display:inline-block" data-position="el-'.$i.'">'.'</td>';
-
-    $i++;
-    echo ( ($i) % 60 == 0) ? '</tr><tr>' : '';
-
-    if ($i >= 1440) break;
-}
-?>
+        <?php require_once "field.php"; ?>
     </tr>
 </table>
 <nav id="administration">
