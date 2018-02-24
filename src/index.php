@@ -3,18 +3,6 @@
 $currentUrl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/src";
 define('BASE_PATH', $currentUrl);
 
-$levels = bin2hex(file_get_contents('LEVELS.DAT'));
-
-// gets all the levels and split them into binary sectors
-$structure = str_split($levels, 2);
-
-// retrieves only the level that is needed
-if (isset($_GET['id']) && (int)$_GET['id'] >= 1 && (int)$_GET['id'] <= 111) $id = $_GET['id'];
-else $id = 1;
-$structure = array_slice($structure, ($id - 1) * 1440 + 96 * ($id - 1), $id * 1440 + 96 * $id);
-
-$elements = require "elements.php";
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,6 +29,23 @@ $elements = require "elements.php";
         <option value="infotron">Infotron</option>
     </select>
 </nav>
+<p>
+    <header><strong>Level Info:</strong></header>
+    <strong>Infotrons needed:</strong>
+    <?php echo $info['i_n'] ?><br>
+
+    <strong>Infotrons available:</strong>
+    <?php echo $info['i_av'] ?><br>
+
+    <strong>Electrons available:</strong>
+    <?php echo $info['e_av'] ?><br>
+
+    <strong>Gravity:</strong>
+    <?php echo ($info['g']) ? 'ON' : 'OFF'; ?><br>
+
+    <strong>Freeze zonks:</strong>
+    <?php echo ($info['f_z']) ? 'ON' : 'OFF'; ?><br>
+</p>
 <script src="<?php echo BASE_PATH ?>/js/objects.js"></script>
 <script src="<?php echo BASE_PATH ?>/js/editor.js"></script>
 </body>

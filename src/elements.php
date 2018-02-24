@@ -16,6 +16,7 @@ return [
     '0c' => 'Up Port', // special
     '0d' => 'Right Port', // special
     '0e' => 'Down Port', // special
+    '0f' => 'Left Port', // special
     '10' => 'Up Port',
     '11' => 'Snik Snak',
     '12' => 'Yellow Disk',
