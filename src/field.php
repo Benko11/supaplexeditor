@@ -20,9 +20,8 @@ $info['f_z'] = false; // freeze zonks
 $beginning = $id * 1440 + ($id - 1) * 96;
 $info['sectors'] = array_slice($structure, $beginning, 96);
 $info['i_n'] = $info['sectors'][30];
-$info['g'] = ($info['sectors'][4] == 1) ? true : false;
+$info['g'] = ($info['sectors'][4] == 0) ? false : true;
 $info['f_z'] = ($info['sectors'][29] == 2) ? true : false;
-// TODO: test gravity and freeze zonk for additional binary values
 
 // generates an array for the level
 $beginning = ($id - 1) * 1440 + 96 * ($id - 1);
