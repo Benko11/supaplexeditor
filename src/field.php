@@ -1,5 +1,9 @@
 <?php
 
+$width = 60;
+$height = 24;
+$size = $width * $height;
+
 $levels = bin2hex(file_get_contents('LEVELS.DAT'));
 
 // gets all the levels and split them into binary sectors
@@ -17,18 +21,15 @@ $info['g'] = false; // gravity
 $info['f_z'] = false; // freeze zonks
 
 // generates an array with level info
-$beginning = $id * 1440 + ($id - 1) * 96;
+$beginning = $id * $size + ($id - 1) * 96;
 $info['sectors'] = array_slice($structure, $beginning, 96);
 $info['i_n'] = $info['sectors'][30];
 $info['g'] = ($info['sectors'][4] == 0) ? false : true;
 $info['f_z'] = ($info['sectors'][29] == 2) ? true : false;
 
 // generates an array for the level
-$beginning = ($id - 1) * 1440 + 96 * ($id - 1);
-$structure = array_slice($structure, $beginning, 1440);
-
-// generates the elements list
-$elements = require "elements.php";
+$beginning = ($id - 1) * $size + 96 * ($id - 1);
+$structure = array_slice($structure, $beginning, $size);
 
 $i = 0;
 foreach ($structure as $key=>$element) {
@@ -55,6 +56,7 @@ foreach ($structure as $key=>$element) {
     echo ( ($i) % 60 == 0) ? '</tr><tr>' : '';
 }
 
+// if there are any infotrons, but none are needed, change that to the default behaviour
 if ($info['i_n'] == 0 && $info['i_av'] > 0) {
     $info['i_n'] = $info['i_av'];
 } else {
