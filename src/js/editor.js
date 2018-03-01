@@ -21,7 +21,7 @@ fields.forEach(field => field.addEventListener('mousedown', function(e){
             electrols_count.innerHTML = editObj.countElements(element);
             break;
         default:
-            console.log(element);
+            return null;
     }
     if (e.which === 1) {
         editObj.changeElement(field);
@@ -45,7 +45,7 @@ fields.forEach(field => field.addEventListener('mousemove', function(e){
                 electrols_count.innerHTML = editObj.countElements(element);
                 break;
             default:
-                console.log(element);
+                return null;
         }
         editObj.changeElement(field);
     }
