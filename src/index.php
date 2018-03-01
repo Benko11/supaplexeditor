@@ -61,13 +61,13 @@ if (isset($_POST['submit'])) {
 <p>
     <header><strong>Level Info:</strong></header>
     <strong>Infotrons needed:</strong>
-    <?php echo $info['i_n'] ?><br>
+    <span id="infotrons"><?php echo $info['i_n'] ?></span><br>
 
     <strong>Infotrons available:</strong>
-    <?php echo $info['i_av'] ?><br>
+    <span id="infotronsAvailable"><?php echo $info['i_av'] ?></span><br>
 
     <strong>Electrons available:</strong>
-    <?php echo $info['e_av'] ?><br>
+    <span id="electrons"><?php echo $info['e_av'] ?></span><br>
 
     <strong>Gravity:</strong>
     <?php echo ($info['g']) ? 'ON' : 'OFF'; ?><br>
