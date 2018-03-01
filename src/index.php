@@ -19,15 +19,17 @@ define('BASE_PATH', $currentUrl);
     </tr>
 </table>
 <nav id="administration">
-    <button id="levels">Levels</button>
-    <button id="save">Save ▼</button>
-    <select name="" id="elements">
-        <option value="void">Void</option>
-        <option value="zonk">Zonk</option>
-        <option value="base">Base</option>
-        <option value="murphy">Murphy</option>
-        <option value="infotron">Infotron</option>
-    </select>
+    <form action="" name="changes">
+        <button id="levels">Levels</button>
+        <button id="save" type="submit">Save ▼</button>
+        <select name="" id="elements">
+            <option value="void">Void</option>
+            <option value="zonk">Zonk</option>
+            <option value="base">Base</option>
+            <option value="murphy">Murphy</option>
+            <option value="infotron">Infotron</option>
+        </select>
+    </form>
 </nav>
 <p>
     <header><strong>Level Info:</strong></header>
