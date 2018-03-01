@@ -6,10 +6,25 @@ document.addEventListener('contextmenu', function(e) {
 
 const fields = document.querySelectorAll('table#field td');
 const elements = document.querySelector('#elements');
-let activeElement = elements[0].value;
 let activeClick;
+    activeElement = elements[0].value;
+    infotrons_count = document.getElementById("infotrons");
+    infotrons_available_count = document.getElementById("infotronsAvailable");
+    electrols_count = document.getElementById("electrons");
 
 fields.forEach(field => field.addEventListener('mousedown', function(e){
+    let element = e.originalTarget.dataset.type;
+    switch(element) {
+        case "infotron":
+            infotrons_available_count.innerHTML = editObj.countElements(element);
+            infotrons_count.innerHTML = editObj.countElements(element);
+            break;
+        case "electron":
+            electrols_count.innerHTML = editObj.countElements(element);
+            break;
+        default:
+            return null;
+    }
     if (e.which === 1) {
         editObj.changeElement(field);
     }
@@ -22,6 +37,18 @@ fields.forEach(field => field.addEventListener('mouseup', function(){
 
 fields.forEach(field => field.addEventListener('mousemove', function(e){
     if (e.which === 1 && activeClick === 1) {
+        let element = e.originalTarget.dataset.type;
+        switch(element) {
+            case "infotron":
+                infotrons_available_count.innerHTML = editObj.countElements(element);
+                infotrons_count.innerHTML = editObj.countElements(element);
+                break;
+            case "electron":
+                electrols_count.innerHTML = editObj.countElements(element);
+                break;
+            default:
+                return null;
+        }
         editObj.changeElement(field);
     }
 }));

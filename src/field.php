@@ -49,7 +49,7 @@ foreach ($structure as $key=>$element) {
             break;
     }
 
-    echo '<td style="background: url('. BASE_PATH .'/icons/'.$fileName.'.png);width:32px;height:32px;display:inline-block" data-position="el-'.$i.'">'.'</td>';
+    echo '<td data-type="'. $fileName .'" style="background: url('. BASE_PATH .'/icons/'.$fileName.'.png);width:32px;height:32px;display:inline-block" data-position="el-'.$i.'">'.'</td>';
 
     $i++;
     echo ( ($i) % 60 == 0) ? '</tr><tr>' : '';
