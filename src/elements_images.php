@@ -1,8 +1,8 @@
 <?php
 
-$elements = require('elements.php');
-foreach ($elements as $key=>$value) {
-    $elements[$key] = trim( strtolower($value) );
-    $elements[$key] = str_replace(' ', '', $elements[$key]);
+$_elements = require('elements.php');
+foreach ($_elements as $key=>$value) {
+    $_elements[$key] = trim( strtolower($value) );
+    $_elements[$key] = str_replace(' ', '', $_elements[$key]);
 }
-return $elements;
+return $_elements;
