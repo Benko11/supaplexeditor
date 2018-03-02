@@ -9,13 +9,26 @@ an idea of what capabilities this app should have. Here are a few (if something 
 make sense to you, I advise that you do a bit of digging before asking):
 
 - Be able to read other level formats (there is DAT, but also SP and MPX)
-- Add support for discretionary level sets
-- Add support for discretionary level sizes
-- Make the editor at least as functional as Supaplex Editor by ElmerProductions
+- Make the editor at least as functional and capable as Supaplex Editor by ElmerProductions
+    - Box selection
+    - Shuffle (the entire level or its part) and random level
+    - Left and right click functionality with the elements
 - Fix some glitches that that editor has
+    - Having to change the level name at two places
+    - Having to properly format the name
+    - The ability to work with any size of level sets with any level sizes
 - Ability for user accounts where their level sets would be stored and could be downloaded
 - Give it a modern GUI, perchance implement some Material Design elements
 - Give the user an ability to share their creations with the world, natively from the app.
+- Be able to work offline and auto-update at launch
+- Add toggle for gravity and freeze
+- Streamline the logic of infotron and electron count (All)
+- Add modes like:
+    - Show dumb murphies
+    - Warn about more murphies
+    - Warn about no exit
+    - Highlight special ports
+    - Fix outer borders (will not be in the shuffle, cannot be changed)
 
 ## Folder structure
 
@@ -29,3 +42,5 @@ will change over time. There is:
 - **index.php** - manages the editor
 
 The rest is (I hope) pretty self-explanatory.
+
+Geez, quite a long way to go!

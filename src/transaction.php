@@ -20,3 +20,4 @@ foreach ($_POST as $name=>$element) {
     }
 }
 
+print_r($_POST);
