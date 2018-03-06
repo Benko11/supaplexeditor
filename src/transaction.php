@@ -18,6 +18,7 @@ foreach ($_POST as $name=>$element) {
             $structure[$pos - 1] = array_search($element, $elements_images);
         }
     }
+
 }
 
 print_r($_POST);
