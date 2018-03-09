@@ -1,14 +1,29 @@
 <?php
 
 class LevelBinary {
-    private $width;
-    private $height;
-    private $size;
-    private $levels;
+    /** @var int */
+    protected $width;
 
+    /** @var int */
+    protected $height;
+
+    /** @var int */
+    protected $size;
+
+    /** @var string */
+    protected $levels;
+
+    /** @var int */
     protected $levelId;
+
+    /** @var array */
     protected $level = array();
 
+    /**
+     * LevelBinary constructor.
+     * @param $width
+     * @param $height
+     */
     public function __construct($width, $height) {
         $this->width = $width;
         $this->height = $height;
@@ -51,6 +66,10 @@ class LevelBinary {
 class LevelRender extends LevelBinary {
     public function __construct($width, $height) {
         parent::__construct($width, $height);
+    }
+
+    private function generateLevelField() {
+
     }
 }
 

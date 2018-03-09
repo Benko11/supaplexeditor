@@ -37,6 +37,3 @@
     font-family: sans-serif;
     display: inline-block;
 }
-#statusBar > div:after {
-    content: " stuff";
-}
