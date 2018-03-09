@@ -25,3 +25,18 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+#statusBar {
+    position: fixed;
+    background: #333;
+    color: #eee;
+    bottom: 0;
+    width: 100%;
+}
+#statusBar > div {
+    font-family: sans-serif;
+    display: inline-block;
+}
+#statusBar > div:after {
+    content: " stuff";
+}
