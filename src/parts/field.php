@@ -1,6 +1,20 @@
 <?php
 
-class LevelBinary {
+class LevelElements {
+    protected $elements;
+    protected $elements_images = array();
+
+    public function __construct() {
+        $this->elements = require 'elements.php';
+        foreach ($this->elements as $key=>$item) {
+            $value = trim(strtolower($item));
+            $value = str_replace(' ', '', $value);
+            $this->elements_images[$key] = $value;
+        }
+    }
+}
+
+class LevelBinary extends LevelElements {
     /** @var int */
     protected $width;
 
@@ -49,6 +63,7 @@ class LevelBinary {
         $field = str_split($this->levels, 2);
         $beginning = ($this->levelId - 1) * $this->size + 96 * ($this->levelId - 1);
         $field = array_slice($field, $beginning, $this->size);
+
         return $field;
     }
 
@@ -59,19 +74,42 @@ class LevelBinary {
     private function generateLevelInfo($field) {
         $beginning = $this->levelId * $this->size + ($this->levelId - 1) * 96;
         $info = array_slice($field, $beginning, $this->size);
+
         return $info;
     }
 }
 
 class LevelRender extends LevelBinary {
+    /**
+     * LevelRender constructor.
+     * @param $width
+     * @param $height
+     */
     public function __construct($width, $height) {
         parent::__construct($width, $height);
     }
 
-    private function generateLevelField() {
+    private function generateLevelField($level) {
+        echo '<table id="field" cellpadding="0" cellspacing="0"><tr>';
 
+        $i = 0;
+        foreach ($level as $element) {
+            if (empty($element) || trim($element) == '') continue;
+
+            echo '<td style="background: url('. BASE_PATH .'/icons/'.$field.'.png);width:32px;height:32px;display:inline-block" ';
+            echo 'data-type="'. $field .'" ';
+            echo 'data-position="el-'.$i.'">';
+            echo '</td>';
+
+            $i++;
+            echo ($i % $this->width == 0) ? '</tr><tr>' : '';
+        }
+        echo '</tr></table>';
     }
 }
+
+print_r(new LevelElements());
+die();
 
 $width = 60;
 $height = 24;
