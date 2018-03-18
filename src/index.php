@@ -17,5 +17,5 @@ if (isset($_POST['submit'])) {
 }
 
 $blade = new Blade(['resources/views'], 'cache');
-echo $blade->make('field.content', ['files' => array('field', 'mainMenu', 'info', 'statusBar')]);
+echo $blade->make('field.content', ['files' => array('mainMenu', 'info', 'statusBar')]);
 die();
