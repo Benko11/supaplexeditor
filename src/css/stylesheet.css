@@ -5,8 +5,8 @@
 
 #administration {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    bottom: 30px;
+    right: 10px;
 }
 
 #field {

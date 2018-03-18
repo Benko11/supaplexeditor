@@ -1,5 +1,5 @@
 <p>
-    <strong>Level Info:</strong><br>
+    <strong>Level Information:</strong><br>
 
     <strong>Infotrons needed:</strong>
     <span id="infotrons"><?php echo $info['i_n'] ?></span><br>

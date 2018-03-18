@@ -1,116 +1,13 @@
 <?php
 
-class LevelElements {
-    protected $elements;
-    protected $elements_images = array();
+require_once 'app/Level/LevelElements.php';
+require_once 'app/Level/LevelBinary.php';
+require_once 'app/Level/LevelRender.php';
 
-    public function __construct() {
-        $this->elements = require 'elements.php';
-        foreach ($this->elements as $key=>$item) {
-            $value = trim(strtolower($item));
-            $value = str_replace(' ', '', $value);
-            $this->elements_images[$key] = $value;
-        }
-    }
-}
-
-class LevelBinary extends LevelElements {
-    /** @var int */
-    protected $width;
-
-    /** @var int */
-    protected $height;
-
-    /** @var int */
-    protected $size;
-
-    /** @var string */
-    protected $levels;
-
-    /** @var int */
-    protected $levelId;
-
-    /** @var array */
-    protected $level = array();
-
-    /**
-     * LevelBinary constructor.
-     * @param $width
-     * @param $height
-     */
-    public function __construct($width, $height) {
-        $this->width = $width;
-        $this->height = $height;
-        $this->size = $this->width * $this->height;
-
-        if (isset($_GET['id']) && !empty($_GET['id'])
-            && (int)$_GET['id'] >= 1 && (int)$_GET['id'] <= 111) {
-            $this->levelId = $_GET['id'];
-        } else {
-            $this->levelId = 1;
-        }
-
-        $this->levels = bin2hex(file_get_contents('LEVELS.DAT')); // TODO: implement database later on
-
-        $this->level['field'] = $this->generateLevelField();
-        $this->level['info'] = $this->generateLevelInfo($this->level['field']);
-    }
-
-    /**
-     * @return array
-     */
-    private function generateLevelField() {
-        $field = str_split($this->levels, 2);
-        $beginning = ($this->levelId - 1) * $this->size + 96 * ($this->levelId - 1);
-        $field = array_slice($field, $beginning, $this->size);
-
-        return $field;
-    }
-
-    /**
-     * @param $field
-     * @return array
-     */
-    private function generateLevelInfo($field) {
-        $beginning = $this->levelId * $this->size + ($this->levelId - 1) * 96;
-        $info = array_slice($field, $beginning, $this->size);
-
-        return $info;
-    }
-}
-
-class LevelRender extends LevelBinary {
-    /**
-     * LevelRender constructor.
-     * @param $width
-     * @param $height
-     */
-    public function __construct($width, $height) {
-        parent::__construct($width, $height);
-    }
-
-    private function generateLevelField($level) {
-        echo '<table id="field" cellpadding="0" cellspacing="0"><tr>';
-
-        $i = 0;
-        foreach ($level as $element) {
-            if (empty($element) || trim($element) == '') continue;
-
-            echo '<td style="background: url('. BASE_PATH .'/icons/'.$field.'.png);width:32px;height:32px;display:inline-block" ';
-            echo 'data-type="'. $field .'" ';
-            echo 'data-position="el-'.$i.'">';
-            echo '</td>';
-
-            $i++;
-            echo ($i % $this->width == 0) ? '</tr><tr>' : '';
-        }
-        echo '</tr></table>';
-    }
-}
-
-print_r(new LevelElements());
-die();
-
+$level = new LevelRender(60,24);
+//$level->generateLevelField();
+//$info = $level->generateLevelInfo();
+/*
 $width = 60;
 $height = 24;
 $size = $width * $height;
@@ -172,4 +69,4 @@ if ($info['i_n'] == 0 && $info['i_av'] > 0) {
     $info['i_n'] = $info['i_av'];
 } else {
     $info['i_n'] = hexdec($info['i_n']);
-}
+}*/
