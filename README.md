@@ -43,4 +43,14 @@ will change over time. There is:
 
 The rest is (I hope) pretty self-explanatory.
 
-Geez, quite a long way to go!
+## Branches
+
+As of 18 March 2018, this repo has more than one branch publicly available. These are **master** and **dev**.
+
+### Master
+
+Represents the latest release where current major features should work, and the app itself should be at least somewhat user-friendly.
+
+### Dev
+
+Represents the release that includes huge feature implementations or refactors that are too big for a single commit/push. Plus, you can directly see on the way how I'm progressing and can add your notes on what you would change or improve.
