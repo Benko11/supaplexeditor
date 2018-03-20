@@ -29,13 +29,3 @@ let editObj = {
         return count.length - 1;
     }
 };
-
-let statusBar = {
-    warning: function() {
-
-    },
-
-    error: function() {
-
-    }
-};
