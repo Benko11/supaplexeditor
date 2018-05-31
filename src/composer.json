@@ -1,7 +1,7 @@
 {
   "name": "benko/supaplex-editor",
   "description": "A fully-fledged editor for Supaplex levels. Currently in development.",
-  "version": "0.1",
+  "version": "0.1.1",
   "project": "library",
   "license": "GPL-3.0-or-later",
   "authors": [

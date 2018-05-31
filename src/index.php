@@ -13,6 +13,7 @@ $blade = new Blade('resources/views', 'cache');
 $content = $blade->make('field.content', [
     'level' => $field->level(),
     'info' => $field->info(),
-    'elements' => $field->elements
+    'elements' => $field->elements,
+    'elements_images' => $field->elements_images
 ]);
 echo $content;

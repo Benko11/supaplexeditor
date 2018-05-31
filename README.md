@@ -46,6 +46,9 @@ Represents the release that includes huge feature implementations or refactors t
 
 # Changelog
 
+- 0.1.1 (31 May 2018)
+    - Bug fixes
+    
 - 0.1 (31 May 2018)
     - OO structure has been implemented, but the code is very buggy, many features don't work properly
     

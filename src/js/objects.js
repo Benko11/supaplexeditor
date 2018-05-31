@@ -1,7 +1,7 @@
 const changes = document.forms['changes'];
 let editObj = {
     changeElement: function(field) {
-        field.style.background = `url(src/icons/${activeElement}.png)`;
+        field.style.background = `url(icons/${activeElement}.png)`;
         field.dataset.type = activeElement;
 
         // console.log('input[value='+ field.dataset.position +']');
@@ -18,7 +18,6 @@ let editObj = {
             changeNode.value = activeElement;
           
             changes.appendChild(changeNode);
-            console.log(changes.children);
         }
     },
     changeActive: function() {

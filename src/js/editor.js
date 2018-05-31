@@ -1,12 +1,17 @@
-// object.js
+// include 'object.js'
 
+// prevent users from right-clicking
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
+// gather
 const fields = document.querySelectorAll('table#field td');
 const elements = document.querySelector('#elements');
+
+// determine whether the user is still holding the mouse button
 let activeClick;
+
 let activeElement = elements[0].value;
 let infotronsCount = document.getElementById("infotrons");
 let infotronsAvailableCount = document.getElementById("infotronsAvailable");
