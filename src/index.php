@@ -1,38 +1,18 @@
 <?php
 
-// generates the element lists
-$elements = require "elements.php";
-$elements_images = require "elements_images.php";
+require_once 'vendor/autoload.php';
+require_once 'app/Field/FieldElement.php';
+require_once 'app/Field/FieldBinary.php';
+require_once 'app/Field/FieldRender.php';
 
-$currentUrl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]/src";
-define('BASE_PATH', $currentUrl);
+use Jenssegers\Blade\Blade;
 
-if (isset($_POST['submit'])) {
-    require 'transaction.php';
-    die();
-}
+$field = new FieldRender();
 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Supaplex Editor</title>
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/stylesheet.css">
-</head>
-<body>
-<table cellpadding="0" cellspacing="0" id="field">
-    <tr>
-        <?php require_once "field.php"; ?>
-    </tr>
-</table>
-
-<?php require_once 'mainMenu.php'; ?>
-
-<?php require_once 'info.php'; ?>
-
-<script src="<?php echo BASE_PATH ?>/js/objects.js"></script>
-<script src="<?php echo BASE_PATH ?>/js/editor.js"></script>
-</body>
-</html>
+$blade = new Blade('resources/views', 'cache');
+$content = $blade->make('field.content', [
+    'level' => $field->level(),
+    'info' => $field->info(),
+    'elements' => $field->elements
+]);
+echo $content;

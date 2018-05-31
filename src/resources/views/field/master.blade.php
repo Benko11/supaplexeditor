@@ -4,13 +4,13 @@
     <title>Supaplex Editor</title>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/css/stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
 
 @yield('content')
 
-<script src="<?php echo BASE_PATH ?>/js/objects.js"></script>
-<script src="<?php echo BASE_PATH ?>/js/editor.js"></script>
+<script src="js/objects.js"></script>
+<script src="/js/editor.js"></script>
 </body>
 </html>

@@ -30,17 +30,6 @@ make sense to you, I advise that you do a bit of digging before asking):
     - Highlight special ports
     - Fix outer borders (will not be in the shuffle, cannot be changed)
 
-## Folder structure
-
-The app is contained within `src` directory. Currently, it's overly simplistic, but that
-will change over time. There is:
-
-- **LEVELS.DAT** - file with all the levels
-- **PLAYER.LST** - file with user data
-- **elements.php** - has an array of all the elements stored
-- **field.php** - generates the level
-- **index.php** - manages the editor
-
 The rest is (I hope) pretty self-explanatory.
 
 ## Branches
@@ -54,3 +43,11 @@ Represents the latest release where current major features should work, and the 
 ### Dev
 
 Represents the release that includes huge feature implementations or refactors that are too big for a single commit/push. Plus, you can directly see on the way how I'm progressing and can add your notes on what you would change or improve.
+
+# Changelog
+
+- 0.1 (31 May 2018)
+    - OO structure has been implemented, but the code is very buggy, many features don't work properly
+    
+- 0.0.x
+    - Whipping up the project, the code, experimenting with different code structures

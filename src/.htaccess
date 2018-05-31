@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^(.*)$ index.php [NC,L]
+
+<IfModule mod.rewrite.c>
+	RewriteEngine On
+
+	# prevents files starting with dot to be viewed by browser
+	RewriteRule /\.|^\. - [F]
+</IfModule>
+
+RewriteEngine on
+RewriteRule ^(.*)$ /public/$1

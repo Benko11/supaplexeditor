@@ -1,7 +1,5 @@
 <?php
-spl_autoload_register(function($class) {
-    require $class . '.php';
-});
+
 /**
  * Class FieldBinary
  * This class handles packing the level data from a huge string into 'bundles' from which only the necessary stuff can be accessed.
@@ -101,8 +99,9 @@ class FieldBinary extends FieldElement {
 
         $info = array();
         $info['sectors'] = array_slice($data, $beginning, 96);
-        $info['i_n'] = (int)$info['sectors'][30];
+        $info['i_n'] = $info['sectors'][30];
         $info['i_av'] = $this->countElements('infotron');
+        $info['i_n'] = ($info['i_av'] > 0 && $info['i_n'] == 0) ? $info['i_av'] : $info['i_n']; // rewrite from 0 to all
         $info['e_av'] = $this->countElements('electron');
         $info['g'] = ($info['sectors'][4] == 0) ? false : true;
         $info['f_z'] = ($info['sectors'][29] == 2) ? true : false;
