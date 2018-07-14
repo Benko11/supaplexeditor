@@ -4,11 +4,9 @@
         <button id="save" type="submit" name="submit">Save ▼</button>
 
         <select name="" id="elements">
-            <?php
-            foreach ($elements as $hex=>$element) {
-                echo '<option value="'.$elements_images[$hex].'">'.$element.'</option>';
-            }
-            ?>
+            @foreach ($elements as $hex=>$element)
+            <option value="{{$elements_images[$hex]}}">{{$element}}</option>
+            @endforeach
         </select>
     </form>
 </nav>
