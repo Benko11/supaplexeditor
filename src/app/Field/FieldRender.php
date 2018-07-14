@@ -30,6 +30,8 @@ class FieldRender extends FieldBinary {
 
         $levelInfo = array();
         $levelInfo['id'] = $this->levelId;
+        $levelInfo['name'] = $this->infoData()['name'];
+        $levelInfo['niceName'] = trim(str_replace('-', '', $levelInfo['name']));
         $levelInfo['infotronsNeeded'] = (int)$this->infoData()['i_n'];
         $levelInfo['infotronsAvailable'] = $this->infoData()['i_av'];
         $levelInfo['gravity'] = $this->infoData()['g'];

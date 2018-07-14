@@ -3,7 +3,7 @@
     <div class="levels">Levels</div>
 
     <div class="details level-details">
-        <span class="needed" id="infotrons">{{$info['infotronsNeeded']}}</span>
+        <input type="text" name="infotronsNeeded" maxlength="3" class="needed" value="{{$info['infotronsNeeded']}}">
         <span class="available" id="infotronsAvailable">{{$info['infotronsAvailable']}}</span><br>
 
         @if ($info['gravity'])
@@ -17,11 +17,15 @@
         @else
         <div class="off freezeZonks">Freeze Zonks</div>
         @endif
+
+        <br>
+        <input type="text" name="name" class="text-white" value="{{$info['niceName']}}">
     </div>
 
     <nav id="administration">
         <form action="" name="changes" method="post">
             <input type="hidden" name="gravity" value="@if ($info['gravity']) on @else off @endif">
+            <input type="hidden" name="freezeZonks" value="@if ($info['freezeZonks']) on @else off @endif">
             <select name="elements" id="elements">
                 @foreach ($elements as $hex=>$element)
                 <option value="{{$elements_images[$hex]}}">{{$element}}</option>

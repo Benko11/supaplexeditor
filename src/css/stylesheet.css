@@ -21,6 +21,7 @@ body {
     padding: 0;
     user-select: none;
     outline-style: none;
+    border: none;
 }
 
 
@@ -107,6 +108,6 @@ select {
     height: 24px;
 }
 
-.level-details span:first-child {
-    padding-right: 15px;
+.level-details input {
+    background: none;
 }

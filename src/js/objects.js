@@ -54,22 +54,30 @@ let mainMenu = {
     },
 
     toggleGravity: function() {
+        let input = document.querySelector('input[name="gravity"]');
+
         if (this.classList.contains('on')) {
             this.classList.remove('on');
             this.classList.add('off');
+            input.value = 'off';
         } else {
             this.classList.remove('off');
             this.classList.add('on');
+            input.value = 'on';
         }
     },
 
     toggleFreezeZonks: function() {
+        let input = document.querySelector('input[name="freezeZonks"]');
+
         if (this.classList.contains('on')) {
             this.classList.remove('on');
             this.classList.add('off');
+            input.value = 'off';
         } else {
             this.classList.remove('off');
             this.classList.add('on');
+            input.value = 'on';
         }
     }
 };

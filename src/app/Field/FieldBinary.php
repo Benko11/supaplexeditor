@@ -2,7 +2,7 @@
 
 /**
  * Class FieldBinary
- * This class handles packing the level data from a huge string into 'bundles' from which only the necessary stuff can be accessed.
+ * This class handles packing the level data from a huge string into 'bundles' from which only the necessary stuff is accessed.
  */
 class FieldBinary extends FieldElement {
     /** @var int */
@@ -105,6 +105,12 @@ class FieldBinary extends FieldElement {
         $info['e_av'] = $this->countElements('electron');
         $info['g'] = ($info['sectors'][4] == 0) ? false : true;
         $info['f_z'] = ($info['sectors'][29] == 2) ? true : false;
+
+        $info['name'] = array_slice($info['sectors'], 6, 23);
+        foreach ($info['name'] as $key=>$character) {
+            $info['name'][$key] = pack('H*', $info['name'][$key]);
+        }
+        $info['name'] = join('', $info['name']);
 
         return $info;
     }
