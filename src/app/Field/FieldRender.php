@@ -28,15 +28,13 @@ class FieldRender extends FieldBinary {
         $g = ($this->infoData()['g']) ? 'ON' : 'OFF';
         $f_z = ($this->infoData()['f_z']) ? 'ON' : 'OFF';
 
-        $info = '<section id="info">';
-        $info .= '<header>Level #'.$this->levelId.'</header>';
-        $info .= '<p><strong>Infotrons needed:</strong> <span id="infotrons">'.(int)$this->infoData()['i_n'].'</span></p>';
-        $info .= '<p><strong>Infotrons available:</strong> <span id="infotronsAvailable">'.$this->infoData()['i_av'].'</span></p>';
-        $info .= '<p><strong>Electrons available:</strong> '.$this->infoData()['e_av'].'</p>';
-        $info .= '<p><strong>Gravity:</strong> '.$g.'</p>';
-        $info .= '<p><strong>Freeze zonks:</strong> '.$f_z.'</p>';
-        $info .= '</section>';
+        $levelInfo = array();
+        $levelInfo['id'] = $this->levelId;
+        $levelInfo['infotronsNeeded'] = (int)$this->infoData()['i_n'];
+        $levelInfo['infotronsAvailable'] = $this->infoData()['i_av'];
+        $levelInfo['gravity'] = $this->infoData()['g'];
+        $levelInfo['freezeZonks'] = $this->infoData()['f_z'];
 
-        return $info;
+        return $levelInfo;
     }
 }

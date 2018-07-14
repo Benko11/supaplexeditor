@@ -1,11 +1,12 @@
-// include 'object.js'
+/**
+ * @include 'objects'
+**/
 
 // prevent users from right-clicking
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
-// gather
 const fields = document.querySelectorAll('table#field td');
 const elements = document.querySelector('#elements');
 
@@ -25,16 +26,9 @@ fields.forEach(field => field.addEventListener('mousedown', function(e){
         activeClick = 1;
     }
 
-    switch(element) {
-        case "infotron":
-            infotronsAvailableCount.innerHTML = editObj.countElements(element);
-            infotronsCount.innerHTML = editObj.countElements(element);
-            break;
-        case "electron":
-            electronsCount.innerHTML = editObj.countElements(element);
-            break;
-    }
+    editObj.updateCounts(element);
 }));
+
 
 // after button release the click is no longer active, so reflect that
 fields.forEach(field => field.addEventListener('mouseup', function(){
@@ -47,17 +41,21 @@ fields.forEach(field => field.addEventListener('mousemove', function(e){
 
         editObj.changeElement(field);
 
-        switch(element) {
-            case "infotron":
-                infotronsAvailableCount.innerHTML = editObj.countElements(element);
-                infotronsCount.innerHTML = editObj.countElements(element);
-                break;
-            case "electron":
-                electronsCount.innerHTML = editObj.countElements(element);
-                break;
-        }
+        editObj.updateCounts(element);
     }
 }));
 
 // toggle what elements the user will be using
 elements.addEventListener('change', editObj.changeActive);
+
+let levelButton = document.querySelector('.mainMenu .level');
+levelButton.addEventListener('click', mainMenu.toggleLevelButton);
+
+let levelDetails = document.querySelector('.level-details');
+levelDetails.style.display = 'none';
+
+let gravitySwitch = document.querySelector('.level-details .gravity');
+gravitySwitch.addEventListener('click', mainMenu.toggleGravity);
+
+let freezeZonksSwitch = document.querySelector('.level-details .freezeZonks');
+freezeZonksSwitch.addEventListener('click', mainMenu.toggleFreezeZonks);

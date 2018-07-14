@@ -1,13 +1,28 @@
-* {
-    margin: 0;
-    padding: 0;
+@font-face {
+    font-family: 'ArcadeClassic';
+    src: urL('fonts/ARCADECLASSIC.TTF');
 }
 
-#administration {
-    position: fixed;
-    bottom: 30px;
-    right: 10px;
+html {
+    overflow: scroll;
+    overflow-x: hidden;
 }
+body {
+    background: #999;
+}
+::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: transparent;
+}
+* {
+    font-family: 'ArcadeClassic';
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    outline-style: none;
+}
+
 
 #field {
     display: block;
@@ -24,4 +39,74 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.mainMenu {
+    background: #999;
+}
+button {
+    border: none;
+}
+div.levels {
+    background: #28f;
+    color: #fff;
+    padding: 0 4px;
+}
+div.level {
+    background: #7de06d;
+    color: #000;
+    padding: 0 32px;
+}
+section.mainMenu div, section.mainMenu button {
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+}
+button.save {
+    padding: 0 10px;
+}
+select {
+    float: right;
+}
+.text-centre {
+    text-align: center;
+}
+select {
+    border: none;
+    background: none;
+}
+.details {
+    position: fixed;
+    background: #000;
+    color: #fff;
+    padding: 1px 6px;
+}
+.level-details {
+    bottom: 30px;
+    left: 5px;
+}
+.level-details .needed {
+    color: #6ef442;
+}
+.level-details .available {
+    color: #b78728;
+}
+.level-details .on {
+    color: #2dbf28;
+}
+.level-details .off {
+    color: #bf3228;
+}
+
+.mainMenu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.mainMenuHolder {
+    height: 24px;
+}
+
+.level-details span:first-child {
+    padding-right: 15px;
 }
