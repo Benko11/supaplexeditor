@@ -60,7 +60,7 @@ Represents the release that includes huge feature implementations or refactors t
 - 0.2 (15 July 2018)
     - UI overhaul
     - Code refactor
-    - Added instructions for installations
+    - Added instructions for installation
     - Preparations for level saving
 
 - 0.1.1 (31 May 2018)
