@@ -32,6 +32,17 @@ make sense to you, I advise that you do a bit of digging before asking):
 
 The rest is (I hope) pretty self-explanatory.
 
+## How to install
+
+After cloning the project, you need to run the following **in the `src` folder**:
+
+```
+composer install
+mkdir cache
+```
+
+After that you should be good to go.
+
 ## Branches
 
 As of 18 March 2018, this repo has more than one branch publicly available. These are **master** and **dev**.
@@ -45,6 +56,12 @@ Represents the latest release where current major features should work, and the 
 Represents the release that includes huge feature implementations or refactors that are too big for a single commit/push. Plus, you can directly see on the way how I'm progressing and can add your notes on what you would change or improve.
 
 # Changelog
+
+- 0.2 (15 July 2018)
+    - UI overhaul
+    - Code refactor
+    - Added instructions for installations
+    - Preparations for level saving
 
 - 0.1.1 (31 May 2018)
     - Bug fixes
