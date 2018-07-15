@@ -1,7 +1,7 @@
 # Supaplex Editor (alpha)
 
 This repository contains the source code for the game editor of an older game,
-but, in my opinion, still great puzzle game - you've guessed it, Supaplex.
+but, in my opinion, still great puzzle game - you've guessed it, [Supaplex](https://classicreload.com/supaplex.html).
 
 The project is currently based on sole web technologies - PHP, HTML and JavaScript,
 and it is its purpose to remain that way. Maybe, it would be good for you to have
