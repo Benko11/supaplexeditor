@@ -1,4 +1,0 @@
-base_path:
-
-routes:
-  index: [/index, someClass.indexAction, GET]

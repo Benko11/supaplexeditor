@@ -5,6 +5,13 @@ require_once 'app/Field/FieldElement.php';
 require_once 'app/Field/FieldBinary.php';
 require_once 'app/Field/FieldRender.php';
 
+if (isset($_POST['submit'])) {
+	require_once 'app/Level/LevelSave.php';
+
+	$save = new LevelSave();
+	header('Location: index.php?id='.$_GET['id']);
+}
+
 use Jenssegers\Blade\Blade;
 
 $field = new FieldRender();

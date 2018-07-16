@@ -18,7 +18,7 @@ make sense to you, I advise that you do a bit of digging before asking):
     - Having to properly format the name
     - The ability to work with any size of level sets with any level sizes
 - Ability for user accounts where their level sets would be stored and could be downloaded
-- Give it a modern GUI, perchance implement some Material Design elements
+<!-- - Give it a modern GUI, perchance implement some Material Design elements -->
 - Give the user an ability to share their creations with the world, natively from the app.
 - Be able to work offline and auto-update at launch
 - Add toggle for gravity and freeze
@@ -41,7 +41,7 @@ composer install
 mkdir cache
 ```
 
-After that you should be good to go.
+After that you should be good to go. Remember that the route of your project is the `src` folder, so do take that into consideration when running this project.
 
 ## Branches
 
@@ -56,6 +56,11 @@ Represents the latest release where current major features should work, and the 
 Represents the release that includes huge feature implementations or refactors that are too big for a single commit/push. Plus, you can directly see on the way how I'm progressing and can add your notes on what you would change or improve.
 
 # Changelog
+
+- 0.2.1
+    - Remove `vendor` and `cache` folders that were unnecessary for the repository (see the instructions for installation above)
+    - Remove `routes` folder that didn't do much except for goofing around
+    - You can now save changes made in a level (only the elements, the rest doesn't work yet)
 
 - 0.2 (15 July 2018)
     - UI overhaul
