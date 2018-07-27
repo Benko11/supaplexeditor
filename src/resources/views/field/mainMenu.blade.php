@@ -1,5 +1,6 @@
 <section class="mainMenu">
     <div class="level">Level {{$info['id']}}</div>
+
     <div class="levels">Levels</div>
 
     <div class="details level-details">
@@ -19,7 +20,7 @@
         @endif
 
         <br>
-        <input type="text" name="name" class="text-white" value="{{$info['niceName']}}">
+        <input type="text" name="name" class="text-white" placeholder="Name" maxlength="22" value="{{$info['niceName']}}">
     </div>
 
     <nav id="administration">
@@ -34,6 +35,10 @@
 
             <button class="save" type="submit" name="submit">Save</button>
         </form>
+
+        <a href="#" class="selection-button"><img src="/icons/cursor.png" alt="Mouse"></a>
+        <a href="#" class="selection-button"><img src="/icons/empty-square.png" alt="Empty square"></a>
+        <a href="#" class="selection-button"><img src="/icons/full-square.png" alt="Full square"></a>
     </nav>
 </section>
 

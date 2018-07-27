@@ -32,6 +32,7 @@ class FieldBinary extends FieldElement {
         $this->size = $this->width * $this->height;
 
         $this->capacity = 111;
+        $this->file = 'LEVELS.DAT';
 
         $this->levelId =
             (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] >= 1 && $_GET['id'] <= $this->capacity)
@@ -58,7 +59,7 @@ class FieldBinary extends FieldElement {
      * This method returns the binary value in hex format of a given level. Currently supports only original DAT level structures.
      */
     protected function levelData() {
-        $data = $this->fileData('LEVELS.DAT');
+        $data = $this->fileData($this->file);
         $beginning = ($this->levelId - 1) * $this->size + 96 * ($this->levelId - 1);
         $data = array_slice($data, $beginning, $this->size);
 
@@ -94,15 +95,14 @@ class FieldBinary extends FieldElement {
      * This method returns certain information about the level along with the individual binary hex sectors. Currently supports only DAT level formats.
      */
     protected function infoData() {
-        $data = $this->fileData('LEVELS.DAT');
+        $data = $this->fileData($this->file);
         $beginning = $this->levelId * $this->size + ($this->levelId - 1) * 96;
 
         $info = array();
         $info['sectors'] = array_slice($data, $beginning, 96);
-        $info['i_n'] = $info['sectors'][30];
+        $info['i_n'] = hexdec($info['sectors'][30]);
         $info['i_av'] = $this->countElements('infotron');
         $info['i_n'] = ($info['i_av'] > 0 && $info['i_n'] == 0) ? $info['i_av'] : $info['i_n']; // rewrite from 0 to all
-        $info['e_av'] = $this->countElements('electron');
         $info['g'] = ($info['sectors'][4] == 0) ? false : true;
         $info['f_z'] = ($info['sectors'][29] == 2) ? true : false;
 
