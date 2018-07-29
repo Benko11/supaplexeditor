@@ -56,7 +56,10 @@ Represents the latest release where current major features should work, and the 
 Represents the release that includes huge feature implementations or refactors that are too big for a single commit/push. Plus, you can directly see on the way how I'm progressing and can add your notes on what you would change or improve.
 
 # Changelog
-
+- 0.2.2.1 (29 July 2018)
+    - Fix of the wrong `LEVELS.DAT` file
+    - Uniform GIT system across all branches
+    
 - 0.2.2 (29 July 2018)
     - Replace `LEVELS.DAT` file with the original level set, rather than mine
     - Use only the 8-bit colour palette in the editor (to give it a more retro DOS-like feel)
