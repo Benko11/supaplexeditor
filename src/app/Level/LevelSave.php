@@ -1,19 +1,22 @@
 <?php
-
 class LevelSave extends FieldBinary {
-	/** @var array */
+	/** @var array **/
 	private $level;
+
+	/** @var int **/
+	private $limit;
 
 	public function __construct() {
 		parent::__construct();
 
-		$this->level = $this->fileData($this->file);
+		$this->limit = 23;
 
+		$this->level = $this->fileData();
+		
 		$this->changeElements();
+		$this->changeProperties();
 		$this->changeName();
-
-		$file = fopen('LEVELS.DAT', 'w');
-		fwrite($file, pack('H*', $this->level));
+		$this->apply();
 	}
 
 	public function changeElements() {
@@ -25,24 +28,67 @@ class LevelSave extends FieldBinary {
 			}
 		}
 
-		$beginning = ($this->levelId - 1) * $this->size + 96 * ($this->levelId - 1);
 		foreach ($changes as $key=>$change) {
-			$this->level[$beginning + $key] = $change;
+			$this->level[$this->sectors['level'] + $key] = $change;
+		}
+	}
+
+	public function changeProperties() {
+		$this->level[$this->sectors['info'] + 4] = (trim(strtolower($_POST['gravity'])) == 'on') ? '01' : '00';
+		$this->level[$this->sectors['info'] + 29] = (trim(strtolower($_POST['freezeZonks'])) == 'on') ? '02' : '00';
+	}
+
+	public function formatName() {
+		$name = trim($_POST['name']);
+		$length = strlen($name);
+		if ($length > $this->limit) {
+			$name = substr($name, 0, $this->limit);
 		}
 
-		return true;
+		$remainder = $this->limit - $length;
+		$dashRemainder = $remainder / 2 - 1;
+
+		$formattedName = '';
+		if (is_int($dashRemainder)) {
+			for ($i = 0; $i < $dashRemainder; $i++) {
+				$formattedName .= '-';
+			}
+
+			$formattedName .= ' '.strtoupper($name).' ';
+
+			for ($i = 0; $i < $dashRemainder; $i++) {
+				$formattedName .= '-';
+			}
+		} else {
+			$numberOfDashes = floor($dashRemainder);
+			for ($i = 0; $i < $numberOfDashes; $i++) {
+				$formattedName .= '-';
+			}
+
+			$formattedName .= ' '.strtoupper($name).' ';
+
+			$numberOfDashes = ceil($dashRemainder);
+			for ($i = 0; $i < $numberOfDashes; $i++) {
+				$formattedName .= '-';
+			}
+		}
+		return $formattedName;
 	}
 
 	public function changeName() {
-		$name = trim($_POST['name']);
-		$beginning = $this->levelId * $this->size + ($this->levelId - 1) * 96;
-		$sectors = array_slice($this->level, $beginning, 96);
+		$name = $this->formatName();
+		$splitName = str_split($name);
 
-		$name = str_split($name);
-		foreach ($name as $key=>$character) {
-			$this->level[$beginning + $key] = unpack('H*', $character);
+		foreach ($splitName as $key=>$character) {
+			$this->level[$this->sectors['info'] + 6 + $key] = unpack('H*', $character)[1];
 		}
+	}
 
-		return true;
+	public function apply() {
+		// merge everything into one binary string and save
+		$this->level = join('', $this->level);
+		$file = fopen($this->fileName, 'w');
+		fwrite($file, pack('H*', $this->level));
+		fclose($file);
 	}
 }

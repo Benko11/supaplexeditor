@@ -11,6 +11,7 @@
 
 @yield('content')
 
+<script src="js/version.js"></script>
 <script src="js/objects.js"></script>
 <script src="js/editor.js"></script>
 </body>

@@ -25,9 +25,6 @@ class FieldRender extends FieldBinary {
     }
 
     public function info() {
-        $g = ($this->infoData()['g']) ? 'ON' : 'OFF';
-        $f_z = ($this->infoData()['f_z']) ? 'ON' : 'OFF';
-
         $levelInfo = array();
         $levelInfo['id'] = $this->levelId;
         $levelInfo['name'] = $this->infoData()['name'];

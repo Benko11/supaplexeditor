@@ -3,28 +3,29 @@
 
     <div class="levels">Levels</div>
 
-    <div class="details level-details">
-        <input type="text" name="infotronsNeeded" maxlength="3" class="needed" value="<?php echo e($info['infotronsNeeded']); ?>">
-        <span class="available" id="infotronsAvailable"><?php echo e($info['infotronsAvailable']); ?></span><br>
 
-        <?php if($info['gravity']): ?>
-        <div class="on gravity">Gravity</div><br>
-        <?php else: ?>
-        <div class="off gravity">Gravity</div><br>
-        <?php endif; ?>
+    <form action="" name="changes" method="post">
+        <div class="details level-details">
+            <input type="text" name="infotronsNeeded" maxlength="3" class="needed" value="<?php echo e($info['infotronsNeeded']); ?>">
+            <span class="available" id="infotronsAvailable"><?php echo e($info['infotronsAvailable']); ?></span><br>
 
-        <?php if($info['freezeZonks']): ?>
-        <div class="on freezeZonks">Freeze Zonks</div>
-        <?php else: ?>
-        <div class="off freezeZonks">Freeze Zonks</div>
-        <?php endif; ?>
+            <?php if($info['gravity']): ?>
+            <div class="on gravity">Gravity</div><br>
+            <?php else: ?>
+            <div class="off gravity">Gravity</div><br>
+            <?php endif; ?>
 
-        <br>
-        <input type="text" name="name" class="text-white" placeholder="Name" maxlength="22" value="<?php echo e($info['niceName']); ?>">
-    </div>
+            <?php if($info['freezeZonks']): ?>
+            <div class="on freezeZonks">Freeze Zonks</div>
+            <?php else: ?>
+            <div class="off freezeZonks">Freeze Zonks</div>
+            <?php endif; ?>
 
-    <nav id="administration">
-        <form action="" name="changes" method="post">
+            <br>
+            <input type="text" name="name" class="text-white" placeholder="Name" maxlength="23" value="<?php echo e($info['niceName']); ?>" spellcheck="false" autocomplete="off">
+        </div>
+
+        <nav id="administration">
             <input type="hidden" name="gravity" value="<?php if($info['gravity']): ?> on <?php else: ?> off <?php endif; ?>">
             <input type="hidden" name="freezeZonks" value="<?php if($info['freezeZonks']): ?> on <?php else: ?> off <?php endif; ?>">
             <select name="elements" id="elements">
@@ -34,12 +35,12 @@
             </select>
 
             <button class="save" type="submit" name="submit">Save</button>
-        </form>
 
-        <a href="#" class="selection-button"><img src="/icons/cursor.png" alt="Mouse"></a>
-        <a href="#" class="selection-button"><img src="/icons/empty-square.png" alt="Empty square"></a>
-        <a href="#" class="selection-button"><img src="/icons/full-square.png" alt="Full square"></a>
-    </nav>
+            <a href="#" class="selection-button"><img src="/icons/cursor.png" alt="Mouse"></a>
+            <a href="#" class="selection-button"><img src="/icons/empty-square.png" alt="Empty square"></a>
+            <a href="#" class="selection-button"><img src="/icons/full-square.png" alt="Full square"></a>
+        </nav>
+    </form>
 </section>
 
 <section class="mainMenuHolder"></section>
