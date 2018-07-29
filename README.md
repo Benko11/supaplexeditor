@@ -57,12 +57,14 @@ Represents the release that includes huge feature implementations or refactors t
 
 # Changelog
 
-- 0.2.2
+- 0.2.2 (29 July 2018)
     - Replace `LEVELS.DAT` file with the original level set, rather than mine
     - Use only the 8-bit colour palette in the editor (to give it a more retro DOS-like feel)
     - New icons for editing in multiple modes - mouse, empty square and full square (currently not working)
     - You can change level name now (up to 23 characters only because of the game limitations)
     - Bug fixes
+    - The editor identifies itself in the browser console
+    - Other minor changes and improvements
 
 - 0.2.1 (16 July 2018)
     - Remove `vendor` and `cache` folders that were unnecessary for the repository (see the instructions for installation above)
