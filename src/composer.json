@@ -1,0 +1,20 @@
+{
+  "name": "benko/supaplex-editor",
+  "description": "A fully-fledged editor for Supaplex levels. Currently in development.",
+  "version": "0.1.1",
+  "project": "library",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Benjamin Bergstrom (Benko)",
+      "email": "benko.dubovecky@gmail.com",
+      "homepage": "https://imbenjamin.co.uk",
+      "role": "Author"
+    }
+  ],
+  "require": {
+    "php": "^7.0",
+    "jenssegers/blade": "*",
+    "dannyvankooten/php-router": "dev-master"
+  }
+}
