@@ -2,6 +2,7 @@
 
 This repository contains the source code for the game editor of an older game,
 but, in my opinion, still great puzzle game - you've guessed it, [Supaplex](https://classicreload.com/supaplex.html).
+To understand what I am going to be talking about regarding the project, you should be familiar with some Supaplex editors or at least the game itself.
 
 The project is currently based on sole web technologies - PHP, HTML and JavaScript,
 and it is its purpose to remain that way. Maybe, it would be good for you to have
@@ -18,7 +19,6 @@ make sense to you, I advise that you do a bit of digging before asking):
     - Having to properly format the name
     - The ability to work with any size of level sets with any level sizes
 - Ability for user accounts where their level sets would be stored and could be downloaded
-<!-- - Give it a modern GUI, perchance implement some Material Design elements -->
 - Give the user an ability to share their creations with the world, natively from the app.
 - Be able to work offline and auto-update at launch
 - Add toggle for gravity and freeze
@@ -34,13 +34,7 @@ The rest is (I hope) pretty self-explanatory.
 
 ## How to install
 
-After cloning the project, you need to run the following **in the `src` folder**:
-
-```
-composer install
-mkdir cache
-```
-
+After cloning the project, you need to install Composer dependencies by running `composer update` or `composer install`:
 After that you should be good to go. Remember that the route of your project is the `src` folder, so do take that into consideration when running this project.
 
 ## Branches
@@ -56,6 +50,8 @@ Represents the latest release where current major features should work, and the 
 Represents the release that includes huge feature implementations or refactors that are too big for a single commit/push. Plus, you can directly see on the way how I'm progressing and can add your notes on what you would change or improve.
 
 # Changelog
+- 0.3 dev
+    - No longer needed to create `src/cache/` directory manually
 - 0.2.2.1 (29 July 2018)
     - Fix of the wrong `LEVELS.DAT` file
     - Uniform GIT system across all branches
