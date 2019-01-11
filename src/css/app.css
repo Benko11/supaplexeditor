@@ -138,12 +138,12 @@ select {
 }
 
 .selection-button {
-  padding: 2.5px 6px;
+  padding: 2.5px 6px 5.5px 6px;
 }
 
 .selection-button:hover,
 .selection-button:focus {
-  padding: 2.5px 4px;
+  padding: 2.5px 4px 5.5px 4px;
   border: 2px solid black;
 }
 
