@@ -27,7 +27,17 @@
             </div>
         </div>
 
-        <div class="levels">Levels</div>
+        <div class="dropup">
+            <div class="levels" data-toggle="dropdown">Levels</div>
+
+            <div class="dropdown-menu details">
+                <ul>
+                    <li>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <nav id="administration">
             <select name="elements" id="elements">
@@ -38,7 +48,7 @@
 
             <button class="save" type="submit" name="submit">Save</button>
 
-            <a href="#" class="selection-button"><img src="/icons/cursor.png" alt="Mouse"></a>
+            <a href="#" class="selection-button active"><img src="/icons/cursor.png" alt="Mouse"></a>
             <a href="#" class="selection-button"><img src="/icons/empty-square.png" alt="Empty square"></a>
             <a href="#" class="selection-button"><img src="/icons/full-square.png" alt="Full square"></a>
         </nav>
