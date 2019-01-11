@@ -1,6 +1,6 @@
 @font-face {
   font-family: "ArcadeClassic";
-  src: urL("fonts/ARCADECLASSIC.TTF");
+  src: urL("fonts/ArcadeClassic.TTF");
 }
 
 html {
@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background: #999;
+  background: #747474;
 }
 
 ::-webkit-scrollbar {
@@ -44,7 +44,7 @@ body {
 }
 
 .mainMenu {
-  background: #999;
+  background: #747474;
 }
 
 button {
@@ -52,15 +52,15 @@ button {
 }
 
 div.levels {
-  background: #369;
-  color: #fff;
-  padding: 0 4px;
+  background: #4b8357;
+  color: #000;
+  padding: 2px 32px;
 }
 
 div.level {
-  background: #9f6;
+  background: #65b368;
   color: #000;
-  padding: 0 32px;
+  padding: 2px 32px;
 }
 
 section.mainMenu div,
@@ -71,20 +71,24 @@ section.mainMenu button {
 }
 
 button.save {
-  padding: 0 10px;
+  background: #dd934b;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000;
+  padding: 0 12px;
+  border-top: 2px solid #e3e337;
+  border-right: 2px solid #c31b1b;
+  border-bottom: 2px solid #c31b1b;
+  border-left: 2px solid #e3e337;
 }
 
 select {
   float: right;
+  border: none;
+  background: none;
 }
 
 .text-centre {
   text-align: center;
-}
-
-select {
-  border: none;
-  background: none;
 }
 
 .details {
@@ -137,7 +141,8 @@ select {
   padding: 2.5px 6px;
 }
 
-.selection-button:hover {
+.selection-button:hover,
+.selection-button:focus {
   padding: 2.5px 4px;
   border: 2px solid black;
 }
