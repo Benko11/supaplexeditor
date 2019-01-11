@@ -18,7 +18,9 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.2.1",
-    "laravel-mix": "^4.0.13"
+    "jquery": "^3.3.1",
+    "laravel-mix": "^4.0.13",
+    "popper.js": "^1.14.6"
   },
   "devDependencies": {
     "resolve-url-loader": "^2.3.1",

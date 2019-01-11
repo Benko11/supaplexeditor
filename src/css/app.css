@@ -10581,6 +10581,7 @@ select {
   float: right;
   border: none;
   background: none;
+  -webkit-appearance: none;
 }
 
 .text-centre {
@@ -10638,7 +10639,8 @@ select {
 }
 
 .selection-button:hover,
-.selection-button:focus {
+.selection-button:focus,
+.selection-button.active {
   padding: 2.5px 4px 5.5px 4px;
   border: 2px solid black;
 }
