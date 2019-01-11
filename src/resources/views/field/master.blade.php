@@ -7,9 +7,9 @@
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-
 @yield('content')
 
+<script src="js/app.js"></script>
 <script src="js/version.js"></script>
 <script src="js/objects.js"></script>
 <script src="js/editor.js"></script>

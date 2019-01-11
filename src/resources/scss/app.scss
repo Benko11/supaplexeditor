@@ -63,7 +63,7 @@ div.level {
     padding: 2px 32px;
 }
 section.mainMenu {
-    div, button {
+    .levels, .level, .save {
         display: inline-block;
         float: left;
         cursor: pointer;
@@ -99,6 +99,21 @@ select {
     bottom: 30px;
     left: 5px;
 
+    input.toggle {
+        display: none;
+        &:checked + label {
+            background: $on;
+        }
+
+        &:not(:checked) + label {
+            background: $off;
+        }
+
+        & + label {
+            padding: 3px 8px;
+        }
+    }
+
     .needed {
         color: #3f0;
     }
@@ -108,11 +123,13 @@ select {
     }
 
     .on {
-        color: #0c0;
+        background: $on;
+        color: #fff;
     }
 
     .off {
-        color: #f03;
+        background: $off;
+        color: #fff;
     }
 }
 

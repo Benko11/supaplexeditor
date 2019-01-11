@@ -1,33 +1,35 @@
 <section class="mainMenu">
-    <div class="level">Level {{$info['id']}}</div>
-
-    <div class="levels">Levels</div>
-
-
     <form action="" name="changes" method="post">
-        <div class="details level-details">
-            <input type="text" name="infotronsNeeded" maxlength="3" class="needed" value="{{$info['infotronsNeeded']}}">
-            <span class="available" id="infotronsAvailable">{{$info['infotronsAvailable']}}</span><br>
+        <div class="dropup">
+            <div class="level" data-toggle="dropdown">Level {{$info['id']}}</div>
 
-            @if ($info['gravity'])
-            <div class="on gravity">Gravity</div><br>
-            @else
-            <div class="off gravity">Gravity</div><br>
-            @endif
+            <div class="details level-details dropdown-menu">
+                <input type="text" name="infotronsNeeded" maxlength="3" class="needed" value="{{$info['infotronsNeeded']}}">
+                <span class="available" id="infotronsAvailable">{{$info['infotronsAvailable']}}</span><br>
 
-            @if ($info['freezeZonks'])
-            <div class="on freezeZonks">Freeze Zonks</div>
-            @else
-            <div class="off freezeZonks">Freeze Zonks</div>
-            @endif
+                <input type="checkbox"
+                       name="gravity"
+                       class="toggle"
+                       id="gravity-toggle"
+                       {{$info['gravity'] ? 'checked' : ''}}>
+                <label for="gravity-toggle">
+                    Gravity
+                </label>
 
-            <br>
-            <input type="text" name="name" class="text-white" placeholder="Name" maxlength="23" value="{{$info['niceName']}}" spellcheck="false" autocomplete="off">
+                <input type="checkbox"
+                       name="freezeZonks"
+                       class="toggle"
+                       id="freeze-zonks-toggle"
+                       {{$info['freezeZonks'] ? 'checked' : ''}}>
+                <label for="freeze-zonks-toggle">
+                    Freeze Zonks
+                </label>
+            </div>
         </div>
 
+        <div class="levels">Levels</div>
+
         <nav id="administration">
-            <input type="hidden" name="gravity" value="@if ($info['gravity']) on @else off @endif">
-            <input type="hidden" name="freezeZonks" value="@if ($info['freezeZonks']) on @else off @endif">
             <select name="elements" id="elements">
                 @foreach ($elements as $hex=>$element)
                 <option value="{{$elements_images[$hex]}}">{{$element}}</option>

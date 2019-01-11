@@ -10494,6 +10494,10 @@ a.text-dark:focus {
   outline-style: none;
 }
 
+.dropdown * {
+  border-radius: 0;
+}
+
 @font-face {
   font-family: "ArcadeClassic";
   src: urL("fonts/ArcadeClassic.TTF");
@@ -10559,8 +10563,9 @@ div.level {
   padding: 2px 32px;
 }
 
-section.mainMenu div,
-section.mainMenu button {
+section.mainMenu .levels,
+section.mainMenu .level,
+section.mainMenu .save {
   display: inline-block;
   float: left;
   cursor: pointer;
@@ -10600,6 +10605,22 @@ select {
   left: 5px;
 }
 
+.level-details input.toggle {
+  display: none;
+}
+
+.level-details input.toggle:checked + label {
+  background: #0c0;
+}
+
+.level-details input.toggle:not(:checked) + label {
+  background: #f03;
+}
+
+.level-details input.toggle + label {
+  padding: 3px 8px;
+}
+
 .level-details .needed {
   color: #3f0;
 }
@@ -10609,11 +10630,13 @@ select {
 }
 
 .level-details .on {
-  color: #0c0;
+  background: #0c0;
+  color: #fff;
 }
 
 .level-details .off {
-  color: #f03;
+  background: #f03;
+  color: #fff;
 }
 
 .mainMenu {
