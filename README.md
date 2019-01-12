@@ -4,8 +4,13 @@ This repository contains the source code for the game editor of an older game,
 but, in my opinion, still great puzzle game - you've guessed it, [Supaplex](https://classicreload.com/supaplex.html).
 To understand what I am going to be talking about regarding the project, you should be familiar with some Supaplex editors or at least the game itself.
 
-The project is currently based on sole web technologies - PHP, HTML and JavaScript,
-and it is its purpose to remain that way. Maybe, it would be good for you to have
+## Try it out
+
+Before we get to the nitty-gritty of programming stuff, you may want to know you can [try out Supaplex Editor online](https://www.supaplexeditor.imbenjamin.co.uk).
+
+## Introduction and features
+
+The project is to be based on solely web technologies - PHP, HTML and JavaScript. Maybe, it would be good for you to have
 an idea of what capabilities this app should have. Here are a few (if something doesn't
 make sense to you, I advise that you do a bit of digging before asking):
 
@@ -34,7 +39,8 @@ The rest is (I hope) pretty self-explanatory.
 
 ## How to install
 
-After cloning the project, you need to install Composer dependencies by running `composer update` or `composer install`:
+After cloning the project, you need to install Composer dependencies by running `composer update` or `composer install` in the `src` folder. Likewise, you will need to install NPM packages by running `npm install` (also in the `src` folder).
+
 After that you should be good to go. Remember that the route of your project is the `src` folder, so do take that into consideration when running this project.
 
 ## Branches
@@ -52,6 +58,16 @@ Represents the release that includes huge feature implementations or refactors t
 # Changelog
 - 0.3 dev
     - No longer needed to create `src/cache/` directory manually
+    - Redisgned editor elements
+    - Bootstrap and NPM implementation
+    - Brand new API
+    - TBD:
+        - implement new API
+        - add instructions for applying the API
+        - view all levels within a file
+        - make selection buttons into labels
+        - implement functionalities into selection buttons
+        - add link for the author
 - 0.2.2.1 (29 July 2018)
     - Fix of the wrong `LEVELS.DAT` file
     - Uniform GIT system across all branches
@@ -66,7 +82,7 @@ Represents the release that includes huge feature implementations or refactors t
     - Other minor changes and improvements
 
 - 0.2.1 (16 July 2018)
-    - Remove `vendor` and `cache` folders that were unnecessary for the repository (see the instructions for installation above)
+    - Remove `vendor` and `cache` folders that were unnecessary for the repository
     - Remove `routes` folder that didn't do much except for goofing around
     - You can now save changes made in a level (only the elements, the rest doesn't work yet)
 
