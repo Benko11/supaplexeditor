@@ -10535,6 +10535,7 @@ body {
   display: block;
   overflow: auto;
   white-space: nowrap;
+  padding-bottom: 10px;
 }
 
 #field td {
