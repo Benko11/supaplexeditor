@@ -15,7 +15,7 @@ an idea of what capabilities this app should have. Here are a few (if something 
 make sense to you, I advise that you do a bit of digging before asking):
 
 - Be able to read other level formats (there is DAT, but also SP and MPX)
-- Make the editor at least as functional and capable as Supaplex Editor by ElmerProductions
+- Make the editor at least as functional and capable as Supaplex Editor by [ElmerProductions](https://www.elmerproductions.com)
     - Box selection
     - Shuffle (the entire level or its part) and random level
     - Left and right click functionality with the elements
