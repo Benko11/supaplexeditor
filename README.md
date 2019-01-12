@@ -6,7 +6,7 @@ To understand what I am going to be talking about regarding the project, you sho
 
 ## Try it out
 
-Before we get to the nitty-gritty of programming stuff, you may want to know you can [try out Supaplex Editor online](https://www.supaplexeditor.imbenjamin.co.uk).
+Before we get to the nitty-gritty of programming stuff, you may want to know you can [try out Supaplex Editor online](https://www.supaplexeditor.imbenjamin.co.uk{:target="_blank"}).
 
 ## Introduction and features
 
