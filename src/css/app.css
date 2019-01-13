@@ -10532,10 +10532,11 @@ body {
 }
 
 #field {
+  background: #080808;
   display: block;
   overflow: auto;
   white-space: nowrap;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #field td {

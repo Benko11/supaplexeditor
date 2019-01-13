@@ -36,10 +36,11 @@ body {
 
 
 #field {
+    background: rgb(8,8,8);
     display: block;
     overflow: auto;
     white-space: nowrap;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 #field td {
     width: 32px;

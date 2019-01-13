@@ -23,4 +23,5 @@ $content = $blade->make('field.content', [
     'elements' => $field->elements,
     'elements_images' => $field->elements_images
 ]);
+
 echo $content;
