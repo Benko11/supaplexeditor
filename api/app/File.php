@@ -16,7 +16,7 @@ class File extends Level {
     protected $source;
 
     /** @var array */
-    protected $binary;
+    protected $fileBinary;
 
     public function __construct() {
         parent::__construct();
@@ -64,15 +64,39 @@ class File extends Level {
         return $this->source;
     }
 
+    public function config($fileName, $type) {
+        $this->setFileName($fileName);
+        $this->setType($type);
+        $this->setSource($fileName, $type);
+        return $this;
+    }
+
     public function read() {
         $binary = bin2hex(file_get_contents($this->getSource()));
         $binary = str_split($binary, 2);
 
-        $this->binary = $binary;
+        $this->fileBinary = $binary;
         return $this;
     }
 
-    public function level() {
+    public function level(int $id = 1) {
+        $this->select($id);
+        return $this;
+    }
+
+    public function levels() {
+        $levels = [];
         
+        $i = 0;
+        dump($this->id);
+        $levels[0] = $this->level(3)->name();
+        dump($this->id);
+        $levels[] = $this->level(22)->name();
+        dump($this->id);
+        // while ($i < 111) {
+        //     $levels[] = $this->level($i + 1)->name();
+        //     $i++;
+        // }
+        return $levels;
     }
 }

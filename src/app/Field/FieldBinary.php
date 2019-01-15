@@ -7,7 +7,7 @@
 class FieldBinary extends FieldElement {
     /** @var int */
     protected $levelId;
-
+    
     /** @var int */
     protected $width;
 

@@ -20,8 +20,12 @@ class LevelController extends Controller {
     /**
      * 
      */
-    public function show() {
-        return dd(new FieldRender);
+    public function show($id) {
+        $file = new File;
+        $file->config('LEVELS', 'DAT')->read();
+
+        $level = $file->level($id)->render();
+        return response()->json(['data' => $level]);
     }
 
     /**
@@ -33,6 +37,7 @@ class LevelController extends Controller {
         $file->setFileName('LEVELS');
         $file->setSource();
         $file->read();
-        dd($file);
+        
+        dd($file->levels());
     }
 }

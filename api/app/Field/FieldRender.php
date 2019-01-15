@@ -38,8 +38,4 @@ class FieldRender extends FieldBinary {
 
         return $levelInfo;
     }
-
-    public function levels() {
-        
-    }
 }
