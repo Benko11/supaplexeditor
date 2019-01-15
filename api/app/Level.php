@@ -154,4 +154,16 @@ class Level {
     private function setInfo() {
         if (!$this->info) $this->info();
     }
+
+    public function getCapacity() {
+        return $this->capacity;
+    }
+
+    public function getWidth() {
+        return $this->width;
+    }
+
+    public function getHeight() {
+        return $this->height;
+    }
 }
