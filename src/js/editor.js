@@ -4,7 +4,7 @@
 
 // prevent users from right-clicking
 document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
+    // e.preventDefault();
 });
 
 const fields = document.querySelectorAll('table#field td');

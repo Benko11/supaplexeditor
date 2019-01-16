@@ -10532,9 +10532,8 @@ body {
 }
 
 #field {
-  background: #080808;
   display: block;
-  overflow: auto;
+  overflow: scroll;
   white-space: nowrap;
   margin-bottom: 10px;
 }
