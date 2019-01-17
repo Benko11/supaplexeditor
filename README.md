@@ -81,6 +81,7 @@ Represents the release that includes huge feature implementations or refactors t
     - Redisgned editor elements
     - Bootstrap and NPM implementation
     - Brand new API
+    - Highlight special ports (green colour)
     - TBD:
         - implement new API
         - view all levels within a file

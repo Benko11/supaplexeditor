@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 
+/**
+ * Renders the render of an individual element.
+ */
 export default class Element extends Component {
     constructor(props) {
         super(props);
     }
 
     elementById(id) {
-        return JSON.parse(localStorage.getItem('elements'))[id];
+        return JSON.parse(localStorage.getItem('elementsImages'))[id];
     }
 
     element(name) {
