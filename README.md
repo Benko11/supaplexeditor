@@ -10,7 +10,7 @@ Before we get to the nitty-gritty of programming stuff, you may want to know you
 
 ## Introduction and features
 
-The project is to be based on solely web technologies - PHP, HTML and JavaScript. Maybe, it would be good for you to have
+The project is to be based solely on web technologies, that is, PHP, HTML and JavaScript. Maybe, it would be good for you to have
 an idea of what capabilities this app should have. Here are a few (if something doesn't
 make sense to you, I advise that you do a bit of digging before asking):
 
