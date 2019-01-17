@@ -15,16 +15,13 @@ class Level {
     /** @var int */
     protected $grid;
 
-    /** @var int */
-    protected $capacity;
-
     /** @var array */
     protected $levelBinary;
 
     /** @var array */
     private $info;
 
-    public function __construct(int $width = null, int $height = null, int $capacity = null) {
+    public function __construct(int $width = null, int $height = null) {
         if ($width) {
             $this->width = $width;
         } else {
@@ -35,12 +32,6 @@ class Level {
             $this->height = $height;
         } else {
             $this->height = 24;
-        }
-
-        if ($capacity) {
-            $this->capacity = $capacity;
-        } else {
-            $this->capacity = 111;
         }
 
         $this->grid = $this->width * $this->height;
@@ -153,10 +144,6 @@ class Level {
      */
     private function setInfo() {
         if (!$this->info) $this->info();
-    }
-
-    public function getCapacity() {
-        return $this->capacity;
     }
 
     public function getWidth() {

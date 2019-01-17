@@ -24,12 +24,15 @@ class LevelController extends Controller {
         $file = new File;
         $file->config('LEVELS', 'DAT')->read();
 
-        $level = $file->level($id)->render();
+        $level = $file->level($id);
         return response()->json(['data' => [
             'capacity' => $file->getCapacity(),
-            'width' => $file->getWidth(),
-            'height' => $file->getHeight(),
-            'level' => $level,
+            'width' => $level->getWidth(),
+            'height' => $level->getHeight(),
+            'name' => $level->name(),
+            'infotrons' => $level->infotrons(),
+            'allInfotrons' => $level->allInfotrons(),
+            'level' => $level->render(),
         ]]);
     }
 

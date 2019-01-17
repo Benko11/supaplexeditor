@@ -18,8 +18,17 @@ class File extends Level {
     /** @var array */
     protected $fileBinary;
 
-    public function __construct() {
+    /** @var integer */
+    protected $capacity;
+
+    public function __construct(int $capacity = null) {
         parent::__construct();
+
+        if (!$capacity) {
+            $this->capacity = 111;
+        } else {
+            $this->capacity = $capacity;
+        }
     }
 
     public function setFileName($filename) {
@@ -98,5 +107,9 @@ class File extends Level {
         //     $i++;
         // }
         return $levels;
+    }
+
+    public function getCapacity() {
+        return $this->capacity;
     }
 }
