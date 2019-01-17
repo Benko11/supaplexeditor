@@ -6,7 +6,7 @@ To understand what I am going to be talking about regarding the project, you sho
 
 ## Try it out
 
-Before we get to the nitty-gritty of programming stuff, you may want to know you can [try out Supaplex Editor online](https://www.supaplexeditor.imbenjamin.co.uk){:target="_blank"}.
+Before we get to the nitty-gritty of programming stuff, you may want to know you can [try out Supaplex Editor online](https://www.supaplexeditor.imbenjamin.co.uk) (the latest **master** commit).
 
 ## Introduction and features
 
@@ -35,13 +35,33 @@ make sense to you, I advise that you do a bit of digging before asking):
     - Highlight special ports
     - Fix outer borders (will not be in the shuffle, cannot be changed)
 
-The rest is (I hope) pretty self-explanatory.
+These enhancement are subject to future updates.
 
 ## How to install
 
-After cloning the project, you need to install Composer dependencies by running `composer update` or `composer install` in the `src` folder. Likewise, you will need to install NPM packages by running `npm install` (also in the `src` folder).
+### Requirements
 
-After that you should be good to go. Remember that the route of your project is the `src` folder, so do take that into consideration when running this project.
+- PHP 7.0 or higher
+- Composer
+- Node.JS
+
+### Step 1: Get the `src` directory working
+
+Enter the `src` folder and inside it run commands: `composer install` and `npm install`. To be able to view the project, you may set up a virtual PHP server where you can listen to any port you like, for instance:
+
+```
+php -S localhost:3000
+```
+
+### Step 2: Get the `api` directory working
+
+Starting with the version `0.3`, Supaplex Editor uses separate API for loading level data, and it is therefore required to get the separate server working as well. By default, the app will listen for the port 3001, but you can configure it to your liking in `src/resources/js/constants.js` where you can customize the URL:
+
+```
+API_URL = 'http://localhost:3001';
+```
+
+After running these steps, you should be good to go. If you encounter a problem, you can let me know by reporting an issue.
 
 ## Branches
 
@@ -63,7 +83,6 @@ Represents the release that includes huge feature implementations or refactors t
     - Brand new API
     - TBD:
         - implement new API
-        - add instructions for applying the API
         - view all levels within a file
         - make selection buttons into labels
         - implement functionalities into selection buttons
