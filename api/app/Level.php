@@ -88,8 +88,9 @@ class Level {
 
     public function infotrons() {
         $this->setInfo();
+        $cluster = hexdec($this->info[30]);
 
-        return hexdec($this->info[30]);
+        return $cluster == 0 ? $this->allInfotrons() : $cluster;
     }
 
     public function allInfotrons() {
