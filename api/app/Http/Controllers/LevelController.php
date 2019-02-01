@@ -31,8 +31,10 @@ class LevelController extends Controller {
             'height' => $level->getHeight(),
             'name' => $level->name(),
             'infotrons' => $level->infotrons(),
-            'allInfotrons' => $level->allInfotrons(),
-            'level' => $level->render(),
+            'infotronsAll' => $level->allInfotrons(),
+            'gravity' => $level->gravity(),
+            'freezeZonks' => $level->freezeZonks(),
+            'level' => $level->render()
         ]]);
     }
 
