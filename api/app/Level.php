@@ -2,7 +2,8 @@
 
 namespace App;
 
-class Level {
+class Level
+{
     /** @var int */
     protected $id;
 
@@ -25,7 +26,8 @@ class Level {
      * @param $width, $height
      * Level constructor that accepts level dimensions in its parameters.
      */
-    public function __construct(int $width = null, int $height = null) {
+    public function __construct(int $width = null, int $height = null)
+    {
         if ($width) {
             $this->width = $width;
         } else {
@@ -47,13 +49,14 @@ class Level {
      * Sets an attribute of $levelBinary to the binary clusters representing the level. Can
      * have other methods appended to it.
      */
-    protected function select(int $id) {
+    protected function select(int $id)
+    {
         if (!($id > 0 && $id <= $this->capacity)) throw new \Exception("Number out of range: '$id' is not within the range of 1-{$this->capacity}");
 
         $this->id = $id;
         $start = ($this->id - 1) * $this->grid + 96 * ($this->id - 1);
         $this->levelBinary = array_slice($this->fileBinary, $start, $this->grid);
-        
+
         return $this;
     }
 
@@ -62,7 +65,8 @@ class Level {
      * Sets an atrribute of $info to the binary clusters representing the information
      * (e.g. needed infotrons, name etc.) about the level. Can have other methods append to it.
      */
-    public function info() {
+    public function info()
+    {
         $start = $this->id * $this->grid + ($this->id - 1) * 96;
         $this->info = array_slice($this->fileBinary, $start, 96);
         return $this;
@@ -73,7 +77,8 @@ class Level {
      * @return int
      * This function will return the number of elements present in a given level. If an unsupported file type is passed, it returns false.
      */
-    protected function countElements(string $element) {
+    protected function countElements(string $element)
+    {
         $number = 0;
 
         foreach ($this->levelBinary as $cluster) {
@@ -91,7 +96,8 @@ class Level {
      * @return array
      * Returns the array of binary cluster forming the level.
      */
-    public function render() {
+    public function render()
+    {
         return $this->levelBinary;
     }
 
@@ -99,7 +105,8 @@ class Level {
      * @return bool
      * Gets the gravity state from binary clusters.
      */
-    public function gravity() {
+    public function gravity()
+    {
         $this->setInfo();
 
         return !($this->info[4] == 0);
@@ -109,7 +116,8 @@ class Level {
      * @return bool
      * Gets the freeze zonks state from binary clusters.
      */
-    public function freezeZonks() {
+    public function freezeZonks()
+    {
         $this->setInfo();
 
         return ($this->info[29] == 2);
@@ -120,7 +128,8 @@ class Level {
      * Gets the number of infotrons based on the requirement, if it is set to nothing, then just
      * gets the number of all infotrons within the level.
      */
-    public function infotrons() {
+    public function infotrons()
+    {
         $this->setInfo();
         $cluster = hexdec($this->info[30]);
 
@@ -131,7 +140,8 @@ class Level {
      * @return int
      * Gets the number of all infotrons available within the level.
      */
-    public function allInfotrons() {
+    public function allInfotrons()
+    {
         return $this->countElements('infotron');
     }
 
@@ -139,7 +149,8 @@ class Level {
      * @return string
      * Gets level name as is stated in the binary clusters.
      */
-    public function classicName() {
+    public function classicName()
+    {
         $this->setInfo();
 
         // First we retrieve the data clusters for the level name
@@ -158,7 +169,8 @@ class Level {
      * @return string
      * Gets level name from binary clusters and formats the level name to a more readable form.
      */
-    public function name() {
+    public function name()
+    {
         $this->setInfo();
 
         $name = $this->classicName();
@@ -166,19 +178,22 @@ class Level {
 
         $letters = [];
         foreach ($name as $key => $character) {
-            if (ctype_alpha($character)) {
+            if (ctype_alpha($character) or $character == ' ') {
                 $letters[] = $key;
             }
         }
-        $threshold = [min($letters), max($letters)];
 
-        foreach ($name as $key => $character) {
-            if ($key < $threshold[0] && $character == '-') {
-                $name[$key] = '';
-            }
+        if (count($letters)) {
+            $threshold = [min($letters), max($letters)];
 
-            if ($key > $threshold[1] && $character == '-') {
-                $name[$key] = '';
+            foreach ($name as $key => $character) {
+                if ($key < $threshold[0] && $character == '-') {
+                    $name[$key] = '';
+                }
+
+                if ($key > $threshold[1] && $character == '-') {
+                    $name[$key] = '';
+                }
             }
         }
 
@@ -190,7 +205,8 @@ class Level {
      * @return void
      * Sets the parameter of the info attribute if it has been not set yet.
      */
-    private function setInfo() {
+    private function setInfo()
+    {
         if (!$this->info) $this->info();
     }
 
@@ -198,7 +214,8 @@ class Level {
      * @return int
      * Gets width dimension of the level canvas. 
      */
-    public function getWidth() {
+    public function getWidth()
+    {
         return $this->width;
     }
 
@@ -206,7 +223,8 @@ class Level {
      * @return int
      * Gets height dimension of the level canvas.
      */
-    public function getHeight() {
+    public function getHeight()
+    {
         return $this->height;
     }
 }
