@@ -6,7 +6,8 @@ use App\Field\FieldRender;
 use Illuminate\Support\Facades\Storage;
 use App\File;
 
-class LevelController extends Controller {
+class LevelController extends Controller
+{
     /**
      * Create a new controller instance.
      *
@@ -16,16 +17,18 @@ class LevelController extends Controller {
     {
         //
     }
-    
+
     /**
      * 
      */
-    public function show($id) {
+    public function show($id)
+    {
         $file = new File;
         $file->config('LEVELS', 'DAT')->read();
 
         $level = $file->level($id);
         return response()->json(['data' => [
+            'id' => (int)$id,
             'capacity' => $file->getCapacity(),
             'width' => $level->getWidth(),
             'height' => $level->getHeight(),
@@ -36,18 +39,5 @@ class LevelController extends Controller {
             'freezeZonks' => $level->freezeZonks(),
             'level' => $level->render()
         ]]);
-    }
-
-    /**
-     * 
-     */
-    public function test() {
-        $file = new File;
-        $file->setType('DAT');
-        $file->setFileName('LEVELS');
-        $file->setSource();
-        $file->read();
-        
-        dd($file->levels());
     }
 }
