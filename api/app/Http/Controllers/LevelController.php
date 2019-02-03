@@ -18,6 +18,14 @@ class LevelController extends Controller
         //
     }
 
+    public function index()
+    {
+        $file = new File;
+        $file->config('LEVELS', 'DAT')->read();
+
+        return response()->json(['data' => $file->levels()]);
+    }
+
     /**
      * 
      */
