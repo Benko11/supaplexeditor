@@ -51,7 +51,7 @@ The core of the application is based on NPM React modules, so in order to get it
 
 ### Step 2: Get the `api` directory working
 
-Supaplex Editor uses separate API for loading level data, and it is therefore required to get the separate server working as well. By default, the app will listen for the port 3002, but you can configure/override this setting by setting the props `apiServer` inside the `Level` component (`app/src/Level/Level.jsx`).
+Supaplex Editor uses separate API for loading level data, and it is therefore required to get the separate server working as well. By default, the app will listen for the port `3002`, but you can configure/override this setting by setting the props `apiServer` inside the `Level` component (`app/src/Level/Level.jsx`).
 
 After running these steps, you should be good to go. If you encounter a problem, you can let me know by reporting an issue.
 
@@ -75,9 +75,9 @@ Represents the release that includes huge feature implementations or refactors t
   - Bootstrap and NPM implementation
   - Brand new API
   - Highlight special ports (green colour)
+  - view all levels within a file
   - TBD:
     - implement new API
-    - view all levels within a file
     - make selection buttons into labels
     - implement functionalities into selection buttons
     - add link for the author
