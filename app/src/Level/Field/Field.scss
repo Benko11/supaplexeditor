@@ -1,0 +1,11 @@
+.field {
+  display: block;
+  overflow: scroll;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+.field td {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import Field from "./Field";
+import Field from "./Field/Field";
 import Row from "./Row";
 import Item from "./Item";
+import Menu from "./Menu/Menu";
 
 class Level extends Component {
   state = {
@@ -10,6 +11,7 @@ class Level extends Component {
     elementsImages: [],
     levelID: this.props.match.params.id,
     levelData: {
+      id: null,
       capacity: null,
       width: null,
       height: null,
@@ -19,12 +21,20 @@ class Level extends Component {
       gravity: false,
       freezeZonks: false,
       level: []
-    }
+    },
+    levels: []
   };
 
   componentDidMount() {
     this.setLevel(this.state.levelID);
     this.setElements(true);
+    this.setLevels();
+  }
+
+  setLevels() {
+    Axios.get(`${this.props.apiServer}/${this.props.apiPrefix}/levels`)
+      .then(response => this.setState({ levels: response.data.data }))
+      .catch(error => console.log(error.response));
   }
 
   setLevel(id) {
@@ -63,6 +73,8 @@ class Level extends Component {
         rowId++;
       }
       id++;
+
+      return true;
     });
 
     return rows;
@@ -72,6 +84,12 @@ class Level extends Component {
     return (
       <React.Fragment>
         <Field>{this.showLevel()}</Field>
+        <Menu
+          elements={this.state.elements}
+          levelData={this.state.levelData}
+          levelId={this.state.levelID}
+          levels={this.state.levels}
+        />
       </React.Fragment>
     );
   }

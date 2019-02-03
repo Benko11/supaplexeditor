@@ -1,0 +1,54 @@
+@import "../../assets/scss/variables";
+
+.levelsButton {
+  background: $secondary;
+  color: #000;
+  padding: 2px 32px;
+}
+.levelButton {
+  background: $primary;
+  color: #000;
+  padding: 2px 32px;
+}
+section.mainMenu {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .levelsButton,
+  .levelButton,
+  .save {
+    float: left;
+    display: inline-block;
+    cursor: default;
+  }
+
+  .levelsButton + .details {
+    height: 40em;
+    overflow-y: scroll;
+  }
+}
+
+.level-details input {
+  background: none;
+}
+
+.mainMenu .mainMenu-item {
+  padding: 8px auto !important;
+}
+
+button.save {
+  background: $exit;
+  color: $white;
+  text-shadow: 1px 1px 0 $black;
+  padding: 0 12px;
+  border-top: 2px solid $exit-border-left-top;
+  border-right: 2px solid $exit-border-right-bottom;
+  border-bottom: 2px solid $exit-border-right-bottom;
+  border-left: 2px solid $exit-border-left-top;
+}
+select {
+  float: right;
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+}
