@@ -75,12 +75,12 @@ Represents the release that includes huge feature implementations or refactors t
   - Bootstrap and NPM implementation
   - Brand new API
   - Highlight special ports (green colour)
-  - view all levels within a file
+  - View all levels within a file
+  - Add link for the author
   - TBD:
     - implement new API
     - make selection buttons into labels
     - implement functionalities into selection buttons
-    - add link for the author
     - add support for LST files
 - 0.2.2.1 (29 July 2018)
   - Fix of the wrong `LEVELS.DAT` file
