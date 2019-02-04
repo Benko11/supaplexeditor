@@ -1,16 +1,27 @@
 @import "../../assets/scss/variables";
 
-.levelsButton {
-  background: $secondary;
-  color: #000;
-  padding: 2px 32px;
-}
 .levelButton {
   background: $primary;
-  color: #000;
+  color: $black;
   padding: 2px 32px;
 }
+.levelsButton {
+  background: $secondary;
+  color: $black;
+  padding: 2px 32px;
+}
+.about {
+  background: #141414;
+  color: $white;
+  float: right;
+  padding: 2px 38px;
+}
 section.mainMenu {
+  &,
+  &.mainMenu-item {
+    padding: 8px auto !important;
+  }
+
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -28,12 +39,51 @@ section.mainMenu {
   }
 }
 
-.level-details input {
-  background: none;
+.levelsButton .dropdown-menu {
+  font-family: $font-secondary !important;
 }
 
-.mainMenu .mainMenu-item {
-  padding: 8px auto !important;
+.level-details {
+  bottom: 30px;
+  left: 5px;
+
+  input {
+    background: none;
+
+    &.toggle {
+      display: none;
+
+      &:checked + label {
+        background: $on;
+      }
+
+      &:not(:checked) + label {
+        background: $off;
+      }
+
+      & + label {
+        padding: 3px 8px;
+      }
+    }
+  }
+
+  .needed {
+    color: #3f0;
+  }
+
+  .available {
+    color: #f96;
+  }
+
+  .on {
+    background: $on;
+    color: $white;
+  }
+
+  .off {
+    background: $off;
+    color: $white;
+  }
 }
 
 button.save {

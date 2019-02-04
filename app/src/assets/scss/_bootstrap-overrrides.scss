@@ -1,5 +1,7 @@
 * {
   outline-style: none;
+  transition: none !important;
+  border-radius: 0 !important;
 }
 
 .dropdown * {
@@ -8,4 +10,41 @@
 
 * li {
   list-style: none;
+}
+
+.modal {
+  font-size: 200%;
+  font-family: $font-secondary;
+  background: $secondary;
+
+  p {
+    line-height: 60%;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    line-height: 30%;
+    font-size: 200%;
+    padding: 0;
+    margin: 0;
+  }
+
+  button {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-size: 100%;
+    line-height: 40%;
+  }
+}
+
+.modal-content {
+  border: 15px solid $white;
+  background: $black;
+  color: $white;
+}
+.modal-header {
+  border-bottom: none;
+}
+.modal-footer {
+  border-top: none;
 }

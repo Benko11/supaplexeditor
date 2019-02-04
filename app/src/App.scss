@@ -9,7 +9,6 @@
   background: transparent;
 }
 * {
-  font-family: $font;
   margin: 0;
   padding: 0;
   -webkit-touch-callout: none;
@@ -27,6 +26,7 @@ html {
   overflow-x: hidden;
 }
 body {
+  font-family: $font;
   background: $base;
 }
 
@@ -45,43 +45,6 @@ button {
   background: $black;
   color: $white;
   padding: 1px 6px;
-}
-.level-details {
-  bottom: 30px;
-  left: 5px;
-
-  input.toggle {
-    display: none;
-    &:checked + label {
-      background: $on;
-    }
-
-    &:not(:checked) + label {
-      background: $off;
-    }
-
-    & + label {
-      padding: 3px 8px;
-    }
-  }
-
-  .needed {
-    color: #3f0;
-  }
-
-  .available {
-    color: #f96;
-  }
-
-  .on {
-    background: $on;
-    color: $white;
-  }
-
-  .off {
-    background: $off;
-    color: $white;
-  }
 }
 
 .selection-button {
