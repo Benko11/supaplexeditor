@@ -31,6 +31,11 @@ class Level extends Component {
     this.setLevels();
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ levelID: nextProps.match.params.id });
+    this.setLevel(this.state.levelID);
+  }
+
   setLevels() {
     Axios.get(`${this.props.apiServer}/${this.props.apiPrefix}/levels`)
       .then(response => this.setState({ levels: response.data.data }))
