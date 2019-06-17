@@ -69,6 +69,7 @@ Represents the release that includes huge feature implementations or refactors t
 # Changelog
 
 - 0.3 dev
+
   - No longer needed to create `src/cache/` directory manually
   - Redisgned editor elements
   - Bootstrap and NPM implementation
@@ -76,14 +77,16 @@ Represents the release that includes huge feature implementations or refactors t
   - Highlight special ports (green colour)
   - View all levels within a file
   - Add link for the author
-  - TBD:
-    - implement new API
-    - make selection buttons into labels
-    - implement functionalities into selection buttons
-    - add support for LST files
+  - implement new API
+  - make selection buttons into labels
+  - implement functionalities into selection buttons
+  - add support for LST files
+
 - 0.2.2.1 (29 July 2018)
+
   - Fix of the wrong `LEVELS.DAT` file
   - Uniform GIT system across all branches
+
 - 0.2.2 (29 July 2018)
 
   - Replace `LEVELS.DAT` file with the original level set, rather than mine
