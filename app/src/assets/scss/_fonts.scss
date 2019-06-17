@@ -1,0 +1,9 @@
+@font-face {
+  font-family: $font;
+  src: url("./assets/fonts/#{$font}.ttf");
+}
+
+@font-face {
+  font-family: $font-secondary;
+  src: url("./assets/fonts/#{$font-secondary}.ttf");
+}

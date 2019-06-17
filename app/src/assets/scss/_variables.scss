@@ -1,0 +1,29 @@
+$base: rgb(116, 116, 116);
+
+$primary: rgb(101, 179, 104);
+$secondary: rgb(75, 131, 87);
+
+$font: "ArcadeClassic";
+$font-secondary: "ThinPixel";
+
+$on: #0c0;
+$off: #f03;
+
+$exit: rgb(221, 147, 75);
+$exit-border-left-top: rgb(227, 227, 55);
+$exit-border-right-bottom: rgb(195, 27, 27);
+
+$white: #fff;
+$black: #000;
+
+// picks only the basic path to the icons, doesn't select the icon set
+$icon-path: "./assets/icons/";
+
+$elements: "void", "zonk", "base", "murphy", "infotron", "standardram",
+  "standardhardware", "exit", "orangedisk", "rightport", "downport", "leftport",
+  "upports", "rightports", "downports", "leftports", "upport", "sniksnak",
+  "sniksnak", "yellowdisk", "terminal", "reddisk", "verticalport",
+  "horizontalport", "universalport", "electron", "bug", "leftram", "rightram",
+  "hardware0", "hardware1", "hardware2", "hardware3", "hardware4", "hardware5",
+  "hardware6", "hardware7", "hardware8", "hardware9", "upram", "downram",
+  "invisible";

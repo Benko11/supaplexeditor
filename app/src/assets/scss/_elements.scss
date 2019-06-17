@@ -1,0 +1,7 @@
+@each $val in $elements {
+  .#{$val} {
+    background: url("#{$icon-path}classic/#{$val}.png");
+    width: 32px;
+    height: 32px;
+  }
+}
