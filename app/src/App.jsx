@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Index from "./components/Index";
+import Level from "./components/Field/Level/Level";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Index} />
+          <Route exact path="/" component={Level} />
         </Switch>
       </BrowserRouter>
     );
