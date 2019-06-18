@@ -1,0 +1,33 @@
+$size: 40px;
+
+.menu {
+  background: $base;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.menu-item {
+  position: relative;
+  background: url("#{$icon-path}classic/standardram-transparent.png") no-repeat;
+  background-size: 100%;
+  width: $size;
+  height: $size;
+}
+
+.infotron-transparent {
+  background: url("#{$icon-path}classic/infotron-transparent.png") no-repeat;
+}
+
+.reddisk-transparent {
+  background: url("#{$icon-path}classic/reddisk.png") no-repeat;
+}
+
+.menu-item > div {
+  background-size: 100%;
+  position: absolute;
+  top: $size / 4;
+  left: $size / 4;
+  width: $size / 2;
+  height: $size / 2;
+}

@@ -4,4 +4,8 @@
     width: 32px;
     height: 32px;
   }
+
+  .#{$val}-transparent {
+    background: url("#{$icon-path}classic/#{$val}-transparent.png") no-repeat;
+  }
 }

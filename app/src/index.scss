@@ -1,9 +1,10 @@
 @import "./assets/scss/variables";
 @import "./assets/scss/elements";
+@import "./assets/scss/menu";
 @import "./assets/scss/fonts";
 @import "~bootstrap/scss/bootstrap.scss";
 
 body {
-  background: rgb(97, 97, 97);
+  background: $base;
   font-family: $font;
 }
