@@ -14,6 +14,7 @@ class Menu extends Component {
             <MenuItem image="bug" />
             <MenuItem image="electron-transparent" />
             <MenuItem image="reddisk-transparent" />
+            <MenuItem image="murphy-transparent" />
           </div>
         </div>
 
