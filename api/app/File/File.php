@@ -1,6 +1,8 @@
 <?php
 
-namespace App;
+namespace App\File;
+
+use App\Level\Level;
 
 class File extends Level
 {
@@ -127,6 +129,7 @@ class File extends Level
     $this->setFileName($fileName);
     $this->setType($type);
     $this->setSource($fileName, $type);
+
     return $this;
   }
 
@@ -140,6 +143,7 @@ class File extends Level
     $binary = str_split($binary, 2);
 
     $this->fileBinary = $binary;
+
     return $this;
   }
 
