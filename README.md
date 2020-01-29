@@ -3,10 +3,21 @@
 This repository contains the source code for the game editor of an older game,
 but, in my opinion, still great puzzle game - you've guessed it, [Supaplex](https://classicreload.com/supaplex.html).
 
-The project is currently based on sole web technologies - PHP, HTML and JavaScript,
-and it is its purpose to remain that way. Maybe, it would be good for you to have
-an idea of what capabilities this app should have. Here are a few (if something doesn't
-make sense to you, I advise that you do a bit of digging before asking):
+## Future?
+
+This project hasn't seen some attention in a while. I have been trying to figure out what codebase the editor should be based upon. Currently, it's just Composer with some JavaScript. But, considering the nature of the application, it should berather based on JavaScript. And I'm not really friends with that language.
+
+It is great, sure, I just dislike its logic, syntax, everything ... Also, there is an issue of an appropriate JavaScript framework. I thought to choose React, but I've still been struggling with learning it. But no worries.
+
+Currently, my plans are to release the version 0.3 in a form that has a clear and extendable codebase. My decision is to implement React framework (JavaScript to handle UI and all interactions. Back-end is to be handled by Laravel Lumen (PHP), which is a lightweight version of Laravel designated for speedy API calls.
+
+# In next version
+
+This section contains the lsit of all the features, tweaks and improvements to be majed in the next major version of  
+
+# Feature list
+
+This section is dedicated to general features that are to be available in Supaplex Editor in its final form (v1.0).
 
 - Be able to read other level formats (there is DAT, but also SP and MPX)
 - Make the editor at least as functional and capable as Supaplex Editor by ElmerProductions
@@ -18,7 +29,6 @@ make sense to you, I advise that you do a bit of digging before asking):
     - Having to properly format the name
     - The ability to work with any size of level sets with any level sizes
 - Ability for user accounts where their level sets would be stored and could be downloaded
-<!-- - Give it a modern GUI, perchance implement some Material Design elements -->
 - Give the user an ability to share their creations with the world, natively from the app.
 - Be able to work offline and auto-update at launch
 - Add toggle for gravity and freeze
@@ -43,15 +53,15 @@ mkdir cache
 
 After that you should be good to go. Remember that the route of your project is the `src` folder, so do take that into consideration when running this project.
 
-## Branches
+# Branches
 
 As of 18 March 2018, this repo has more than one branch publicly available. These are **master** and **dev**.
 
-### Master
+## Master
 
 Represents the latest release where current major features should work, and the app itself should be at least somewhat user-friendly.
 
-### Dev
+## Dev
 
 Represents the release that includes huge feature implementations or refactors that are too big for a single commit/push. Plus, you can directly see on the way how I'm progressing and can add your notes on what you would change or improve.
 
